@@ -95,7 +95,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, add_index: true|
-|category_id|integer|null: false, add_index: true, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :sub_sub_categories
@@ -106,7 +106,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, add_index: true|
-|sub_category_id|integer|null: false, add_index: true, foreign_key: true|
+|sub_category_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :items
