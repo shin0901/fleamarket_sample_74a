@@ -11,7 +11,7 @@
 |familyname_kana|string|null: false|
 |firstname_kana|string|null: false|
 |date_of_birth|integer|null: false|
-|profile|string||
+|profile|text||
 |creditcard_id|integer|null: false, foreign_key: true|
 |user_address_id|integer|null: false, foreign_key: true|
 
