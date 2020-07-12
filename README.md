@@ -1,24 +1,17 @@
 # README
 
-## userテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|familyname|string|null: false|
-|firstname|string|null: false|
-|familyname_kana|string|null: false|
-|firstname_kana|string|null: false|
-|date_of_birth|integer|null: false|
-|profile|text||
-|creditcard_id|integer|null: false, foreign_key: true|
-|user_address_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :items
-- has_one :creditcard
-- has_one :user_address
+- has_one :creditcard, dependent: :destroy
+- has_one :user_address, dependent: :destroy
+- has_one :profile, dependent: :destroy
 
 ## user_addressテーブル
 |Column|Type|Options|
@@ -33,89 +26,97 @@
 |address|integer|null: false|
 |buildingname|string||
 |phone|integer||
-|user_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
-- has_one :user
+- belongs_to :user
 
-## creditcardテーブル
+## creditcardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|number|integer|null: false|
+|number|integer|null: false, unique: true|
 |valid_thru_month|integer|null: false|
 |valid_thru_year|integer|null: false|
 |securitycode|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
-- has_one :user
+- belongs_to :user
 
-## itemテーブル
+## profilesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|familyname|string|null: false|
+|firstname|string|null: false|
+|familyname_kana|string|null: false|
+|firstname_kana|string|null: false|
+|year_of_birth|integer|null: false|
+|month_of_birth|integer|null: false|
+|date_of_birth|integer|null: false|
+|introduction|text||
+|icon|string||
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
+## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|integer|null: false, add_index: true|
 |description|text|null: false|
 |price|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|sub_sub_category_id|integer|null: false, foreign_key: true|
-|brand_id|integer||
-|condition_id|integer|null: false, foreign_key: true|
-|shipping_fee_id|integer|null: false, foreign_key: true|
-|shipping_origin_id|integer|null: false, foreign_key: true|
-|days_until_shipping_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
+|size_id|references|foreign_key: true|
+|brand_id|references|foreign_key: true|
+|condition_id|references|null: false, foreign_key: true|
+|shipping_charge_id|references|null: false, foreign_key: true|
+|shipping_origin_id|references|null: false, foreign_key: true|
+|days_until_shipping_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
-- belongs_to :sub_sub_category
+- belongs_to :category
 - belongs_to :brand
+- belongs_to :size
 - belongs_to :condition
-- belongs_to :shipping_fee
+- belongs_to :shipping_charge
 - belongs_to :shipping_origin
 - belongs_to :days_until_shipping
-- has_many :images
+- has_many :images, dependent: :destroy
 
-## imageテーブル
+## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|item_id|integer|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
 
-## categoryテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, add_index: true|
-
-### Association
-- has_many :sub_categories
-
-## sub_categoryテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, add_index: true|
-|category_id|integer|null: false, foreign_key: true|
-
-### Association
-- has_many :sub_sub_categories
-- belongs_to :category
-
-
-## sub_sub_categoryテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, add_index: true|
-|sub_category_id|integer|null: false, foreign_key: true|
+|category|string|null: false, add_index: true|
+|ancestry|string|null: false|
 
 ### Association
 - has_many :items
-- belongs_to :sub_category
 
-## brandテーブル
+## sizeテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, add_index: true|
+|size|string|null: false|
+|item_id|references|null: false|
+
+### Association
+- has_many :items
+
+## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|brand|string|null: false, add_index: true|
 
 ### Association
 - has_many :items
@@ -145,10 +146,10 @@
 ### Association
 - has_many :items
 
-## shipping_feeテーブル
+## shipping_chargeテーブル
 |Column|Type|Options|
 |------|----|-------|
-|shipping_fee|string|null: false|
+|shipping_charge|string|null: false|
 
 ### Association
 - has_many :items
