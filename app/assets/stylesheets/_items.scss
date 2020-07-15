@@ -6,7 +6,7 @@
   border-bottom: 1px solid #eeeeee;
 }
 @mixin padding_container {
-  padding: 20px 40px;
+  padding: 20px 40px 40px 40px; 
 }
 @mixin box_design {
   border: 1px solid #d3d3d3;
@@ -234,6 +234,7 @@
 }
 .back-link {
   text-decoration: none;
+  color: #87cefa
 }
 .back-link:hover {
   text-decoration: underline;
