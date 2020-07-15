@@ -63,7 +63,7 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|integer|null: false, add_index: true|
+|name|string|null: false, add_index: true|
 |description|text|null: false|
 |price|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
@@ -77,13 +77,13 @@
 
 ### Association
 - belongs_to :user
-- belongs_to :category
 - belongs_to :brand
-- belongs_to :size
-- belongs_to :condition
-- belongs_to :shipping_charge
-- belongs_to :shipping_origin
-- belongs_to :days_until_shipping
+- belongs_to_active_hash :category
+- belongs_to_active_hash :size
+- belongs_to_active_hash :condition
+- belongs_to_active_hash :shipping_charge
+- belongs_to_active_hash :shipping_origin
+- belongs_to_active_hash :days_until_shipping
 - has_many :images, dependent: :destroy
 
 ## imagesテーブル
@@ -131,7 +131,7 @@
 ## shipping_originテーブル
 |Column|Type|Options|
 |------|----|-------|
-|shipping_origin|string|null: false|
+|prefecture|string|null: false|
 
 ### Association
 - has_many :items
