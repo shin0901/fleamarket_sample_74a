@@ -98,7 +98,7 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category|string|null: false, add_index: true|
+|name|string|null: false, add_index: true|
 |ancestry|string|null: false|
 
 ### Association
@@ -108,7 +108,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |size|string|null: false|
-|item_id|references|null: false|
 
 ### Association
 - has_many :items
@@ -116,7 +115,7 @@
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand|string|null: false, add_index: true|
+|name|string|null: false, add_index: true|
 
 ### Association
 - has_many :items
