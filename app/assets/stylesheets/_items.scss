@@ -2,14 +2,20 @@
   box-sizing: border-box;
 }
 
+$base-color: #eeeeee;
+$theme-color: #00eeff;
+$container-color: #ffffff;
+$frame-color: #d3d3d3;
+$text-color: #222222;
+
 @mixin border {
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid $base-color;
 }
 @mixin padding_container {
   padding: 20px 40px 40px 40px; 
 }
 @mixin box_design {
-  border: 1px solid #d3d3d3;
+  border: 1px solid $frame-color;
   border-radius: 4px;
 }
 @mixin input-box_height {
@@ -20,7 +26,7 @@
 }
 
 .wrapper {
-  background-color: #eeeeee;
+  background-color: $base-color;
 }
 
 .header {
@@ -32,7 +38,7 @@
 }
 
 .container {
-  background-color: #ffffff;
+  background-color: $container-color;
   width: 700px;
   margin: 0 auto;
   &__images {
@@ -41,7 +47,7 @@
     &__titles {
       margin-bottom: 20px;
       font-size: 13px;
-      color: #222222;
+      color: $text-color;
     }
   }
   &__description {
@@ -59,7 +65,7 @@
   &__price {
     @include padding_container;
     font-size: 13px;
-    color: #222222;
+    color: $text-color;
     &__selling-price {
       display: flex;
       justify-content: space-between;
@@ -106,13 +112,13 @@
         display: inline-block;
         font-size: 20px;
         text-decoration: none;
-        color: #ffffff;
+        color: $container-color;
       }
       &__str {
         display: inline-block;
         font-size: 13px;
         text-decoration: none;
-        color: #ffffff;
+        color: $container-color;
       }
     }
   }
@@ -128,13 +134,13 @@
   }
   &__required {
     margin-left: 7px;
-    color: #ffffff;
+    color: $container-color;
     font-size: 12px;
     padding: 1px 3px;
     border-radius: 2px;
-    background-color: #00eeff;
+    background-color: $theme-color;
     &--not {
-      background-color: #d3d3d3;
+      background-color: $frame-color;
     }
   }
 }
@@ -172,8 +178,8 @@
     width: 100%;
     line-height: 20px;
     padding: 35px;
-    background-color: #eeeeee;
-    border: 1px dashed #d3d3d3;
+    background-color: $base-color;
+    border: 1px dashed $frame-color;
     font-size: 12px;
     text-align: center;
   }
@@ -196,9 +202,9 @@
   cursor: pointer;
   font-weight: bold;
   font-size: 16px;
-  background-color: #00eeff;
+  background-color: $theme-color;
   border-style: none;
-  color: #ffffff;
+  color: $container-color;
 }
 .save-btn {
   width: calc(100% - 270px);
@@ -208,9 +214,9 @@
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
-  background-color: #d3d3d3;
+  background-color: $frame-color;
   border-style: none;
-  color: #222222;
+  color: $text-color;
 }
 
 .price-box {
