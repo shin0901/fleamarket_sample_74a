@@ -8,7 +8,7 @@
 |password|string|null: false|
 
 ### Association
-- has_many :items
+- has_many :items, dependent: :destroy
 - has_one :creditcard, dependent: :destroy
 - has_one :user_address, dependent: :destroy
 - has_one :profile, dependent: :destroy
@@ -72,17 +72,16 @@
 |brand_id|references|foreign_key: true|
 |condition_id|references|null: false, foreign_key: true|
 |shipping_charge_id|references|null: false, foreign_key: true|
-|shipping_origin_id|references|null: false, foreign_key: true|
 |days_until_shipping_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
 - belongs_to :brand
-- belongs_to_active_hash :category
+- belongs_to :category
+- belongs_to_active_hash :prefecture
 - belongs_to_active_hash :size
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :shipping_charge
-- belongs_to_active_hash :shipping_origin
 - belongs_to_active_hash :days_until_shipping
 - has_many :images, dependent: :destroy
 
@@ -104,13 +103,6 @@
 ### Association
 - has_many :items
 
-## sizeテーブル
-|Column|Type|Options|
-|------|----|-------|
-|size|string|null: false|
-
-### Association
-- has_many :items
 
 ## brandsテーブル
 |Column|Type|Options|
@@ -120,35 +112,3 @@
 ### Association
 - has_many :items
 
-## conditionテーブル
-|Column|Type|Options|
-|------|----|-------|
-|condition|string|null: false|
-
-### Association
-- has_many :items
-
-## shipping_originテーブル
-|Column|Type|Options|
-|------|----|-------|
-|prefecture|string|null: false|
-
-### Association
-- has_many :items
-
-
-## days_until_shippingテーブル
-|Column|Type|Options|
-|------|----|-------|
-|days_until_shipping|integer|null: false|
-
-### Association
-- has_many :items
-
-## shipping_chargeテーブル
-|Column|Type|Options|
-|------|----|-------|
-|shipping_charge|string|null: false|
-
-### Association
-- has_many :items
