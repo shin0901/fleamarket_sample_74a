@@ -21,7 +21,7 @@
 |familyname_kana|string|null: false|
 |firstname_kana|string|null: false|
 |postalcode|integer|null: false|
-|prefecture|string|null: false|
+|prefecture_id(active_hash)|string|null: false|
 |city|string|null: false|
 |address|integer|null: false|
 |buildingname|string||
@@ -34,10 +34,8 @@
 ## creditcardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|number|integer|null: false, unique: true|
-|valid_thru_month|integer|null: false|
-|valid_thru_year|integer|null: false|
-|securitycode|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
@@ -68,11 +66,12 @@
 |price|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
-|size_id|references|foreign_key: true|
+|prefectur_id(active_hash)|reference|null: false, foreign_key: true|
+|size_id(active_hash)|references|foreign_key: true|
 |brand_id|references|foreign_key: true|
-|condition_id|references|null: false, foreign_key: true|
-|shipping_charge_id|references|null: false, foreign_key: true|
-|days_until_shipping_id|references|null: false, foreign_key: true|
+|condition_id(active_hash)|references|null: false, foreign_key: true|
+|shipping_charge_id(active_hash)|references|null: false, foreign_key: true|
+|days_until_shipping_id(active_hash)|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
