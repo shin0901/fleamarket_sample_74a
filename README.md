@@ -25,7 +25,7 @@
 |city|string|null: false|
 |address|integer|null: false|
 |buildingname|string||
-|phone|integer||
+|phone|string||
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
