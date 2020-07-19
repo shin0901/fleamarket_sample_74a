@@ -1,0 +1,82 @@
+.header
+  ヘッダー
+.container
+  .container__item-info
+    .container__item-info__name
+      商品名
+    .container__item-info__detail
+      .container__item-info__detail__images
+        商品画像
+      .container__item-info__detail__table
+        %table.detail-table
+          %tr
+            %td.detail-table__title 出品者 
+            %td.detail-table__content ユーザー名
+          %tr
+            %td.detail-table__title カテゴリー 
+            %td.detail-table__content.detail-table__content--category
+              %p 大カテゴリー名
+              %p > 中カテゴリー名
+              %p > 小カテゴリー名
+          %tr
+            %td.detail-table__title ブランド
+            %td.detail-table__content ブランド名
+          %tr
+            %td.detail-table__title 商品のサイズ
+            %td.detail-table__content M
+          %tr
+            %td.detail-table__title 商品の状態
+            %td.detail-table__content 目立った傷や汚れなし
+          %tr
+            %td.detail-table__title 配送料の負担
+            %td.detail-table__content 送料込み（出品者負担）
+          %tr
+            %td.detail-table__title 配送元地域
+            %td.detail-table__content 大阪府
+          %tr
+            %td.detail-table__title 発送日の目安
+            %td.detail-table__content 1~2日で発送
+
+
+    .container__item-info__price-info
+      .container__item-info__price-info__price ¥1,000
+      .container__item-info__price-info__info
+        %span.tax-include (税込)
+        %span.shipping_charge 送料込み
+    .container__item-info__btn
+      %button.buy-btn
+        購入画面に進む
+    .container__item-info__description
+      商品の説明文が表示されます
+  .container__comments
+    .container__comments__notice
+      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    .container__comments__input-box
+      %textarea.comment-form
+    .container__comments__btn
+      %button.comment-btn
+        コメントする
+  .container__sns-icons
+    .container__sns-icons__facebook
+      %i.fab.fa-facebook-square
+    .container__sns-icons__twitter
+      %i.fab.fa-twitter
+    .container__sns-icons__line
+      %i.fab.fa-line
+    .container__sns-icons__pinterest
+      %i.fab.fa-pinterest
+  .container__user-other-selling
+    .container__user-other-selling__title
+      [ユーザー]さんのその他の出品
+    .container__user-other-selling__items
+  .container__other-recommends
+    .container__other-recommends__title
+      [ブランド名]の[カテゴリ名] その他の商品
+    .container__other-recommends__items
+.breadcrumb-list
+  .breadcrumb-list__home
+    メルカリ >
+  .breadcrumb-list__category
+    レディース 
+.footer
+  フッター
