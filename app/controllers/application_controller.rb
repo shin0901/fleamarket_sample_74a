@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
 
+  def index
+    @search = Product.ransack(params[:q])
+    @products = @search.result
+    # binding.pry
+  end
+
   private
 
   def production?
@@ -13,4 +19,5 @@ class ApplicationController < ActionController::Base
       password == Rails.application.credentials[:basic_auth][:pass]
     end
   end
+
 end
