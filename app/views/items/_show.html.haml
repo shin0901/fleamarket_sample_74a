@@ -6,21 +6,51 @@
       商品名
     .container__item-info__detail
       .container__item-info__detail__images
-        商品画像
+        .current_image
+          = image_tag 'show/show1.jpg', class: 'current_image__1'
+        .images_table
+          .images_table__box
+            = image_tag 'show/show1.jpg', class: 'images_table__image'
+          .images_table__box
+            = image_tag 'show/show1.jpg', class: 'images_table__image'
+          .images_table__box
+            = image_tag 'show/show1.jpg', class: 'images_table__image'
+          .images_table__box
+            = image_tag 'show/show1.jpg', class: 'images_table__image'
+          .images_table__box
+            = image_tag 'show/show1.jpg', class: 'images_table__image'
+          .images_table__box
+            = image_tag 'show/show1.jpg', class: 'images_table__image'
+          .images_table__box
+            = image_tag 'show/show1.jpg', class: 'images_table__image'
+          .images_table__box
+            = image_tag 'show/show1.jpg', class: 'images_table__image'
+          .images_table__box
+            = image_tag 'show/show1.jpg', class: 'images_table__image'
+          .images_table__box
+            = image_tag 'show/show1.jpg', class: 'images_table__image'
       .container__item-info__detail__table
         %table.detail-table
           %tr
             %td.detail-table__title 出品者 
-            %td.detail-table__content ユーザー名
+            %td.detail-table__content 
+              = link_to 'ユーザー名', '#', class: 'table-link'
           %tr
             %td.detail-table__title カテゴリー 
             %td.detail-table__content.detail-table__content--category
-              %p 大カテゴリー名
-              %p > 中カテゴリー名
-              %p > 小カテゴリー名
+              = link_to '大カテゴリー名', '#', class: 'table-link'
+              %label.category-link
+                = link_to '#' do
+                  %i.fas.fa-angle-right
+                = link_to '中カテゴリー名', '#', class: 'table-link'
+              %label.category-link
+                = link_to '#' do
+                  %i.fas.fa-angle-right
+                = link_to '小カテゴリー名', '#', class: 'table-link'
           %tr
             %td.detail-table__title ブランド
-            %td.detail-table__content ブランド名
+            %td.detail-table__content 
+              = link_to 'ブランド名', '#', class: 'table-link'
           %tr
             %td.detail-table__title 商品のサイズ
             %td.detail-table__content M
@@ -36,7 +66,6 @@
           %tr
             %td.detail-table__title 発送日の目安
             %td.detail-table__content 1~2日で発送
-
 
     .container__item-info__price-info
       .container__item-info__price-info__price ¥1,000
@@ -69,14 +98,75 @@
     .container__user-other-selling__title
       [ユーザー]さんのその他の出品
     .container__user-other-selling__items
+      .container__user-other-selling__items__card
+        = image_tag 'show/show2.jpg', height: '', width: '100%', class: ''
+        .item__card
+          .item__card__name 商品名
+          .item__card__price ¥1,500
+      .container__user-other-selling__items__card
+        = image_tag 'show/show2.jpg', height: '', width: '100%', class: ''
+        .item__card
+          .item__card__name 商品名
+          .item__card__price ¥1,500
+      .container__user-other-selling__items__card
+        = image_tag 'show/show2.jpg', height: '', width: '100%', class: ''
+        .item__card
+          .item__card__name 商品名
+          .item__card__price ¥1,500
+      .container__user-other-selling__items__card
+        = image_tag 'show/show2.jpg', height: '', width: '100%', class: ''
+        .item__card
+          .item__card__name 商品名
+          .item__card__price ¥1,500
+      .container__user-other-selling__items__card
+        = image_tag 'show/show2.jpg', height: '', width: '100%', class: ''
+        .item__card
+          .item__card__name 商品名
+          .item__card__price ¥1,500
+      .container__user-other-selling__items__card
+        = image_tag 'show/show2.jpg', height: '', width: '100%', class: ''
+        .item__card
+          .item__card__name 商品名
+          .item__card__price ¥1,500
   .container__other-recommends
     .container__other-recommends__title
       [ブランド名]の[カテゴリ名] その他の商品
     .container__other-recommends__items
+      .container__other-recommends__items__card
+        = image_tag 'show/show3.jpg', height: '', width: '100%', class: ''
+        .item__card
+          .item__card__name 商品名
+          .item__card__price ¥4,900
+      .container__other-recommends__items__card
+        = image_tag 'show/show3.jpg', height: '', width: '100%', class: ''
+        .item__card
+          .item__card__name 商品名
+          .item__card__price ¥4,900
+      .container__other-recommends__items__card
+        = image_tag 'show/show3.jpg', height: '', width: '100%', class: ''
+        .item__card
+          .item__card__name 商品名
+          .item__card__price ¥4,900
+      .container__other-recommends__items__card
+        = image_tag 'show/show3.jpg', height: '', width: '100%', class: ''
+        .item__card
+          .item__card__name 商品名
+          .item__card__price ¥4,900
+      .container__other-recommends__items__card
+        = image_tag 'show/show3.jpg', height: '', width: '100%', class: ''
+        .item__card
+          .item__card__name 商品名
+          .item__card__price ¥4,900
+      .container__other-recommends__items__card
+        = image_tag 'show/show3.jpg', height: '', width: '100%', class: ''
+        .item__card
+          .item__card__name 商品名
+          .item__card__price ¥4,900
 .breadcrumb-list
-  .breadcrumb-list__home
-    メルカリ >
-  .breadcrumb-list__category
-    レディース 
+  .breadcrumb-list__text
+    .breadcrumb-list__text__home
+      メルカリ >
+    .breadcrumb-list__text__category
+      レディース 
 .footer
   フッター

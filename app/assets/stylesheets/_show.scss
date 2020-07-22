@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
 $base-color: #eeeeee;
 $theme-color: #00eeff;
@@ -53,9 +54,9 @@ $border-color: #e9e7e7;
       display: flex;
       margin-bottom: 15px;
       &__images {
-        height: 380px;
         width: 300px;
         background-color: #f3f3f3;
+        cursor: pointer;
       }
       &__table {
         width: 300px;
@@ -147,7 +148,18 @@ $border-color: #e9e7e7;
     &__title {
       font-size: 20px;
       font-weight: bold;
-      color: #4fb5f5;
+      color: #329cdd;
+      margin-bottom: 10px;
+    }
+    &__items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      &__card {
+        margin-bottom: 20px;
+        width: 31%;
+        background-color: $container-color;
+      }
     }
   }
   &__other-recommends {
@@ -156,23 +168,36 @@ $border-color: #e9e7e7;
     &__title {
       font-size: 20px;
       font-weight: bold;
-      color: #4fb5f5;
+      color: #329cdd;
+      margin-bottom: 10px;
+    }
+    &__items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      &__card {
+        margin-bottom: 20px;
+        width: 31%;
+        background-color: $container-color;
+      }
     }
   }
 }
 
 .breadcrumb-list {
   border-top: 1px solid $border-color;
-  padding: 10px 40px;
-  font-size: 13px;
-  color: $text-color;
-  display: flex;
-  &__home {
-    margin: 5px;
-  }
-  &__category {
-    font-weight: bold;
-    margin: 5px;
+  &__text {
+    padding: 10px 40px;
+    font-size: 13px;
+    color: $text-color;
+    display: flex;
+    &__home {
+      margin: 5px;
+    }
+    &__category {
+      font-weight: bold;
+      margin: 5px;
+    }
   }
 }
 
@@ -196,9 +221,21 @@ $border-color: #e9e7e7;
     background-color: $container-color;
     border: 1px solid $border-color;
     &--category {
-      line-height: 16px;
+      line-height: 17px;
+      .category-link {
+        display: flex;
+      }
     }
   }
+}
+.table-link {
+  text-decoration: none;
+  color: #329cdd;
+  display: block;
+}
+.table-link:hover {
+  text-decoration: underline;
+  opacity: 0.6;
 }
 
 .buy-btn {
@@ -231,6 +268,43 @@ $border-color: #e9e7e7;
 .tax-include {
   font-size: 10px;
 }
-.shipping-charge {
 
+.current_image {
+  font-size: 0;
+  text-align: center;
+  &__1 {
+    height: 300px;
+  }
+}
+.images_table {
+  font-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  &__box {
+    width: 60px;
+    height: 60px;
+  }
+  &__image {
+    opacity: 0.6;
+    height: 100%
+  }
+  &__image:hover {
+    opacity: 1;
+  }
+}
+.item__card {
+  margin: 15px;
+  &__name {
+    height: 55px;
+  }
+  &__price {
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
+.fa-angle-right {
+  font-size: 15px;
+  color: #329cdd;
 }
