@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   def index
     @search = Product.ransack(params[:q])
     @products = @search.result
-    # binding.pry
   end
 
   private
