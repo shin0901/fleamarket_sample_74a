@@ -94,74 +94,123 @@
       %i.fab.fa-line
     .container__sns-icons__pinterest
       %i.fab.fa-pinterest
-  .container__user-other-selling
-    .container__user-other-selling__title
+  .container__user_other_selling
+    .container__user_other_selling__title
       [ユーザー]さんのその他の出品
-    .container__user-other-selling__items
-      .container__user-other-selling__items__card
-        = image_tag 'show/show2.jpg', height: '', width: '100%', class: ''
-        .item__card
-          .item__card__name 商品名
-          .item__card__price ¥1,500
-      .container__user-other-selling__items__card
-        = image_tag 'show/show2.jpg', height: '', width: '100%', class: ''
-        .item__card
-          .item__card__name 商品名
-          .item__card__price ¥1,500
-      .container__user-other-selling__items__card
-        = image_tag 'show/show2.jpg', height: '', width: '100%', class: ''
-        .item__card
-          .item__card__name 商品名
-          .item__card__price ¥1,500
-      .container__user-other-selling__items__card
-        = image_tag 'show/show2.jpg', height: '', width: '100%', class: ''
-        .item__card
-          .item__card__name 商品名
-          .item__card__price ¥1,500
-      .container__user-other-selling__items__card
-        = image_tag 'show/show2.jpg', height: '', width: '100%', class: ''
-        .item__card
-          .item__card__name 商品名
-          .item__card__price ¥1,500
-      .container__user-other-selling__items__card
-        = image_tag 'show/show2.jpg', height: '', width: '100%', class: ''
-        .item__card
-          .item__card__name 商品名
-          .item__card__price ¥1,500
-  .container__other-recommends
-    .container__other-recommends__title
+    .container__user_other_selling__items
+      .item_card
+        = link_to '#', class: 'item_card__link' do
+          .item_card__image_field
+            = image_tag 'show/show3.jpg', class: 'item_card__image_field__image'
+          .item_card__info
+            .item_card__info__name
+              商品名
+            .item_card__info__price
+              ¥2,000
+      .item_card
+        = link_to '#', class: 'item_card__link' do
+          .item_card__image_field
+            = image_tag 'show/show3.jpg', class: 'item_card__image_field__image'
+          .item_card__info
+            .item_card__info__name
+              商品名
+            .item_card__info__price
+              ¥2,000
+      .item_card
+        = link_to '#', class: 'item_card__link' do
+          .item_card__image_field
+            = image_tag 'show/show3.jpg', class: 'item_card__image_field__image'
+          .item_card__info
+            .item_card__info__name
+              商品名
+            .item_card__info__price
+              ¥2,000
+      .item_card
+        = link_to '#', class: 'item_card__link' do
+          .item_card__image_field
+            = image_tag 'show/show3.jpg', class: 'item_card__image_field__image'
+          .item_card__info
+            .item_card__info__name
+              商品名
+            .item_card__info__price
+              ¥2,000
+      .item_card
+        = link_to '#', class: 'item_card__link' do
+          .item_card__image_field
+            = image_tag 'show/show3.jpg', class: 'item_card__image_field__image'
+          .item_card__info
+            .item_card__info__name
+              商品名
+            .item_card__info__price
+              ¥2,000
+      .item_card
+        = link_to '#', class: 'item_card__link' do
+          .item_card__image_field
+            = image_tag 'show/show3.jpg', class: 'item_card__image_field__image'
+          .item_card__info
+            .item_card__info__name
+              商品名
+            .item_card__info__price
+              ¥2,000
+
+  .container__other_recommends
+    .container__other_recommends__title
       [ブランド名]の[カテゴリ名] その他の商品
-    .container__other-recommends__items
-      .container__other-recommends__items__card
-        = image_tag 'show/show3.jpg', height: '', width: '100%', class: ''
-        .item__card
-          .item__card__name 商品名
-          .item__card__price ¥4,900
-      .container__other-recommends__items__card
-        = image_tag 'show/show3.jpg', height: '', width: '100%', class: ''
-        .item__card
-          .item__card__name 商品名
-          .item__card__price ¥4,900
-      .container__other-recommends__items__card
-        = image_tag 'show/show3.jpg', height: '', width: '100%', class: ''
-        .item__card
-          .item__card__name 商品名
-          .item__card__price ¥4,900
-      .container__other-recommends__items__card
-        = image_tag 'show/show3.jpg', height: '', width: '100%', class: ''
-        .item__card
-          .item__card__name 商品名
-          .item__card__price ¥4,900
-      .container__other-recommends__items__card
-        = image_tag 'show/show3.jpg', height: '', width: '100%', class: ''
-        .item__card
-          .item__card__name 商品名
-          .item__card__price ¥4,900
-      .container__other-recommends__items__card
-        = image_tag 'show/show3.jpg', height: '', width: '100%', class: ''
-        .item__card
-          .item__card__name 商品名
-          .item__card__price ¥4,900
+    .container__other_recommends__items
+      .item_card
+        = link_to '#', class: 'item_card__link' do
+          .item_card__image_field
+            = image_tag 'show/show2.jpg', class: 'item_card__image_field__image'
+          .item_card__info
+            .item_card__info__name
+              商品名
+            .item_card__info__price
+              ¥2,000
+      .item_card
+        = link_to '#', class: 'item_card__link' do
+          .item_card__image_field
+            = image_tag 'show/show4.jpg', class: 'item_card__image_field__image'
+          .item_card__info
+            .item_card__info__name
+              商品名
+            .item_card__info__price
+              ¥2,000
+      .item_card
+        = link_to '#', class: 'item_card__link' do
+          .item_card__image_field
+            = image_tag 'show/show2.jpg', class: 'item_card__image_field__image'
+          .item_card__info
+            .item_card__info__name
+              商品名
+            .item_card__info__price
+              ¥2,000
+      .item_card
+        = link_to '#', class: 'item_card__link' do
+          .item_card__image_field
+            = image_tag 'show/show3.jpg', class: 'item_card__image_field__image'
+          .item_card__info
+            .item_card__info__name
+              商品名
+            .item_card__info__price
+              ¥2,000
+      .item_card
+        = link_to '#', class: 'item_card__link' do
+          .item_card__image_field
+            = image_tag 'show/show2.jpg', class: 'item_card__image_field__image'
+          .item_card__info
+            .item_card__info__name
+              商品名
+            .item_card__info__price
+              ¥2,000
+      .item_card
+        = link_to '#', class: 'item_card__link' do
+          .item_card__image_field
+            = image_tag 'show/show1.jpg', class: 'item_card__image_field__image'
+          .item_card__info
+            .item_card__info__name
+              商品名
+            .item_card__info__price
+              ¥2,000
 .breadcrumb-list
   .breadcrumb-list__text
     .breadcrumb-list__text__home
