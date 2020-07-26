@@ -73,6 +73,7 @@ $text-color: #222222;
     }
     &__text{
       margin-left: 16px;
+      width: 247px;
       &__name{
         font-size: 13px;
         line-height: 1.4em;
@@ -115,9 +116,14 @@ $text-color: #222222;
           content: '';
           height: 20px;
           width: 20px;
+          .checkbox{
+            height: 20px;
+            width: 20px;
+          }
         }
         .c{
           font-size: 14px;
+          margin-left: 5px;
         }
       }
       .b{
@@ -184,7 +190,7 @@ $text-color: #222222;
       margin-bottom: 24px;
       font-size: 14px;
     }
-    input{
+    .btn{
       background-color: #ccc;
       color: #888;
       cursor: default;
@@ -198,8 +204,8 @@ $text-color: #222222;
       position: relative;
       .mozi{
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 100px;
+        left: 0px;
       }
     }
     
