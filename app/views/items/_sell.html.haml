@@ -1,5 +1,5 @@
 .header
-  = link_to image_tag('logo.png', height: '60px', class: 'header__logo'), root_path
+  = link_to image_tag('materials/logo.png', height: '60px', class: 'header__logo'), root_path
 .container
   .container__images
     .container__images__titles
@@ -13,7 +13,7 @@
       %label.image-select-box
         %input.image-select-box__hidden{ type: "file", accept: "image/*"}
         .image-select-box__visible
-          = image_tag 'icon_camera.png', height: '20px', class: 'camera-logo'
+          = image_tag 'materials/icon_camera.png', height: '20px', class: 'camera-logo'
           %p ドラッグアンドドロップ
           %p またはクリックしてファイルをアップロード
 
@@ -123,7 +123,7 @@
         もどる
 .footer
   .footer__logo
-    = link_to image_tag('logo-white.png', height: '55px', class: 'footer__logo__image'), root_path
+    = link_to image_tag('materials/logo-white.png', height: '55px', class: 'footer__logo__image'), root_path
     .footer__logo__block
       %a.footer__logo__block__copyright(href = root_path) ©
       %a.footer__logo__block__str(href = root_path) FURIMA

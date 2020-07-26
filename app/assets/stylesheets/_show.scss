@@ -3,7 +3,7 @@
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
 $base-color: #eeeeee;
-$theme-color: #00eeff;
+$theme-color: #02cece;
 $container-color: #ffffff;
 $frame-color: #d3d3d3;
 $text-color: #333333;
@@ -34,10 +34,66 @@ $border-color: #e9e7e7;
   height: 200px;
   background-color: $theme-color;
 }
-
+.breadcrumb-list {
+  border-bottom: 1px solid $border-color;
+  background-color: $container-color;
+  box-shadow: 0 3px 3px 0 $frame-color;
+  &__text {
+    padding: 10px 40px;
+    font-size: 13px;
+    color: $text-color;
+    display: flex;
+    align-items: center;
+    &__home {
+      margin: 5px;
+      &__link {
+        text-decoration: none;
+        margin: 5px;
+        color: $text-color;
+      }
+      &__link:hover {
+        color: $theme-color;
+      }
+    }
+    &__category {
+      margin: 5px;
+      align-items: center;
+      &__link {
+        
+        &--home {
+          text-decoration: none;
+          margin: 5px;
+          color: $text-color;
+        }
+        &--home:hover {
+          color: $theme-color;
+        }
+        &--sub {
+          text-decoration: none;
+          margin: 5px;
+          color: $text-color;
+        }
+        &--sub:hover {
+          color: $theme-color;
+        }
+        &--subsub {
+          text-decoration: none;
+          margin: 5px;
+          color: $text-color;
+        }
+        &--subsub:hover {
+          color: $theme-color;
+        }
+      }
+    }
+  }
+}
+.fas.fa-angle-right {
+  color: #777777;
+}
 .container {
   width: 700px;
-  margin: 0 auto;
+  margin: 30px auto;
   background-color: $base-color;
   color: $text-color;
   &__item-info {
@@ -51,16 +107,15 @@ $border-color: #e9e7e7;
       text-align: center;
     }
     &__detail {
-      display: flex;
       margin-bottom: 15px;
       &__images {
-        width: 300px;
+        width: 100%;
         background-color: #f3f3f3;
         cursor: pointer;
       }
       &__table {
-        width: 300px;
-        margin-left: 20px;
+        width: 100%;
+        margin-bottom: 20px;
       }
     }
     &__price-info {
@@ -79,6 +134,48 @@ $border-color: #e9e7e7;
     }
     &__description {
       font-size: 17px;
+      margin-bottom: 10px;
+    }
+    &__links {
+      display: flex;
+      justify-content: space-between;
+      &--favorite {
+        display: flex;
+        border-radius: 17px;
+        height: 35px;
+        padding: 3px 10px;
+        font-size: 15px;
+        align-items: center;
+        border: 1px solid #ffa500;
+        .favorite__icon {
+          margin: 2px;
+        }
+        .favorite__text {
+          margin: 2px;
+        }
+        .favorite__count {
+          margin: 2px;
+        }
+      }
+      &--report {
+        .report_button {
+          display: flex;
+          border-radius: 7px;
+          height: 35px;
+          padding: 3px 10px;
+          font-size: 15px;
+          align-items: center;
+          border: 1px solid $text-color;
+          text-decoration: none;
+          color: $text-color;
+          .report__icon {
+            margin: 2px;
+          }
+          .report__text {
+            margin: 2px;
+          }
+        }
+      }
     }
   }
   &__comments {
@@ -87,101 +184,28 @@ $border-color: #e9e7e7;
     margin-bottom: 10px;
     color: $text-color;
     &__notice {
-      background-color: #fffae0;
+      background-color: $base-color;
       padding: 10px;
       line-height: 15px;
       margin-bottom: 10px;
       font-size: 14px;
     }
   }
-  &__sns-icons {
-    background-color: $container-color;
-    height: 140px;
-    padding: 30px;
-    margin-bottom: 20px;
+  &__page {
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    font-size: 30px;
-    color: $container-color;
-    &__facebook {
-      background-color: #1414ef;
-      width: 40px;
-      height: 40px;
-      margin-left: 10px;
-      border-radius: 5px;
-      text-align: center;
-    }
-    &__twitter {
-      background-color: #4fb5f5;
-      width: 40px;
-      height: 40px;
-      font-size: 27px;
-      margin-left: 10px;
-      text-align: center;
-      border-radius: 5px;
-    }
-    &__line {
-      background-color: #19c419;
-      width: 40px;
-      height: 40px;
-      margin-left: 10px;
-      border-radius: 5px;
-      text-align: center;
-    }
-    &__pinterest {
-      background-color: #a30404;
-      width: 40px;
-      height: 40px;
-      font-size: 20px;
-      padding-top: 5px;
-      margin-left: 10px;
-      border-radius: 5px;
-      text-align: center;
-      vertical-align: middle;
-
-    }
-  }
-  &__user_other_selling {
-    background-color: $base-color;
+    justify-content: space-between;
     margin-bottom: 20px;
-    &__title {
-      font-size: 20px;
-      font-weight: bold;
-      color: #329cdd;
-      margin-bottom: 10px;
+    font-size: 15px;
+    &__before {
+      .before_item {
+        text-decoration: none;
+        color: $theme-color;
+      }
     }
-    &__items {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      .item_card {
-        width: 217px;
-        height: 330px;
-        background-color: #ffffff;
-        margin-bottom: 22px;
-        &__link {
-          text-decoration: none;
-        }
-        &__image_field {
-          width: 217px;
-          height: 217px;
-          &__image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-          }
-        }
-        &__info {
-          padding: 15px;
-          color: $text-color;
-          &__name {
-            height: 52px;
-          }
-          &__price {
-            font-weight: bold;
-          }
-        }
+    &__after {
+      .after_item {
+        text-decoration: none;
+        color: $theme-color;
       }
     }
   }
@@ -191,8 +215,12 @@ $border-color: #e9e7e7;
     &__title {
       font-size: 20px;
       font-weight: bold;
-      color: #329cdd;
+      color: $theme-color;
       margin-bottom: 10px;
+      .search_category {
+        text-decoration: none;
+        color: $theme-color;
+      }
     }
     &__items {
       display: flex;
@@ -200,7 +228,7 @@ $border-color: #e9e7e7;
       justify-content: space-between;
       .item_card {
         width: 217px;
-        height: 330px;
+        height: 310px;
         background-color: #ffffff;
         margin-bottom: 22px;
         &__link {
@@ -218,11 +246,24 @@ $border-color: #e9e7e7;
         &__info {
           padding: 15px;
           color: $text-color;
+          line-height: 18px;
           &__name {
-            height: 52px;
+            height: 26px;
           }
-          &__price {
-            font-weight: bold;
+          &__detail {
+            display: flex;
+            justify-content: space-between;
+            &__price_field {
+              font-weight: bold;
+              &--price {
+              }
+              &--tax {
+                font-size: 10px;
+              }
+            }
+            &__favorite {
+              font-weight: bold;
+            }
           }
         }
       }
@@ -230,22 +271,7 @@ $border-color: #e9e7e7;
   }
 }
 
-.breadcrumb-list {
-  border-top: 1px solid $border-color;
-  &__text {
-    padding: 10px 40px;
-    font-size: 13px;
-    color: $text-color;
-    display: flex;
-    &__home {
-      margin: 5px;
-    }
-    &__category {
-      font-weight: bold;
-      margin: 5px;
-    }
-  }
-}
+
 
 .footer {
   height: 300px;
@@ -255,14 +281,16 @@ $border-color: #e9e7e7;
 .detail-table {
   font-size: 13px;
   border: 1px solid $border-color;
+  width: 620px;
+  margin: 0 auto;
   &__title {
-    width: 120px;
+    width: 30%;
     padding: 10px;
     background-color: #f3f3f3;
     border: 1px solid $border-color;
   }
   &__content {
-    width: 180px;
+    width: 70%;
     padding: 10px;
     background-color: $container-color;
     border: 1px solid $border-color;
@@ -276,7 +304,7 @@ $border-color: #e9e7e7;
 }
 .table-link {
   text-decoration: none;
-  color: #329cdd;
+  color: $theme-color;
   display: block;
 }
 .table-link:hover {
@@ -286,29 +314,36 @@ $border-color: #e9e7e7;
 
 .buy-btn {
   height: 60px;
-  width: 100%;
+  width: 60%;
   font-size: 23px;
   font-weight: bold;
   color: $container-color;
   background-color: $theme-color;
   border-style: none;
   cursor: pointer;
+  border-radius: 30px;
+  display: block;
+  margin: 0 auto;
 }
 
 .comment-form {
   height: 100px;
   width: 100%;
+  margin-bottom: 5px;
   border-color: $frame-color;
 }
 
 .comment-btn {
   height: 50px;
-  width: 100%;
+  width: 55%;
+  border-radius: 25px;
   color: $container-color;
-  background-color: #aaa9a9;
+  background-color: $theme-color;
   border-style: none;
-  border-radius: 5px;
+  display: block;
+  margin: 30px auto;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .tax-include {
@@ -334,7 +369,9 @@ $border-color: #e9e7e7;
   }
   &__image {
     opacity: 0.6;
-    height: 100%
+    width:100%;
+    height: 100%;
+    object-fit: contain;
   }
   &__image:hover {
     opacity: 1;
