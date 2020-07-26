@@ -2,29 +2,6 @@
   box-sizing: border-box;
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
-$base-color: #eeeeee;
-$theme-color: #02cece;
-$container-color: #ffffff;
-$frame-color: #d3d3d3;
-$text-color: #333333;
-$border-color: #e9e7e7;
-
-@mixin border {
-  border-bottom: 1px solid $base-color;
-}
-@mixin padding_container {
-  padding: 20px 40px 40px 40px; 
-}
-@mixin box_design {
-  border: 1px solid $frame-color;
-  border-radius: 4px;
-}
-@mixin input-box_height {
-  height: 45px;
-}
-@mixin images-text-box_height {
-  height: 150px;
-}
 
 .wrapper {
   background-color: $base-color;
@@ -47,9 +24,8 @@ $border-color: #e9e7e7;
     &__home {
       margin: 5px;
       &__link {
-        text-decoration: none;
+        @include change_a_tag_to_text_color;
         margin: 5px;
-        color: $text-color;
       }
       &__link:hover {
         color: $theme-color;
@@ -61,25 +37,22 @@ $border-color: #e9e7e7;
       &__link {
         
         &--home {
-          text-decoration: none;
+          @include change_a_tag_to_text_color;
           margin: 5px;
-          color: $text-color;
         }
         &--home:hover {
           color: $theme-color;
         }
         &--sub {
-          text-decoration: none;
+          @include change_a_tag_to_text_color;
           margin: 5px;
-          color: $text-color;
         }
         &--sub:hover {
           color: $theme-color;
         }
         &--subsub {
-          text-decoration: none;
+          @include change_a_tag_to_text_color;
           margin: 5px;
-          color: $text-color;
         }
         &--subsub:hover {
           color: $theme-color;
@@ -166,8 +139,7 @@ $border-color: #e9e7e7;
           font-size: 15px;
           align-items: center;
           border: 1px solid $text-color;
-          text-decoration: none;
-          color: $text-color;
+          @include change_a_tag_to_text_color;
           .report__icon {
             margin: 2px;
           }
@@ -198,14 +170,12 @@ $border-color: #e9e7e7;
     font-size: 15px;
     &__before {
       .before_item {
-        text-decoration: none;
-        color: $theme-color;
+        @include change_a_tag_to_theme_color;
       }
     }
     &__after {
       .after_item {
-        text-decoration: none;
-        color: $theme-color;
+        @include change_a_tag_to_theme_color;
       }
     }
   }
@@ -218,8 +188,7 @@ $border-color: #e9e7e7;
       color: $theme-color;
       margin-bottom: 10px;
       .search_category {
-        text-decoration: none;
-        color: $theme-color;
+        @include change_a_tag_to_theme_color;
       }
     }
     &__items {
@@ -303,8 +272,7 @@ $border-color: #e9e7e7;
   }
 }
 .table-link {
-  text-decoration: none;
-  color: $theme-color;
+  @include change_a_tag_to_theme_color;
   display: block;
 }
 .table-link:hover {
