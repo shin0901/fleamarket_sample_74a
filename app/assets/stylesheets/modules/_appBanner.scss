@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+.appBanner{
+  background-image: url(/material/pict/bg-appBanner-pict.jpg);
+  padding: 100px 40px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  &__inner{
+    color: #fff;
+    text-align: center;
+    &__title{
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    &__text{
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    &__icon{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 20px auto 0;
+    }
+  }
+}
+
+img{
+  width: 100%;
+  vertical-align: bottom;
+  border: 0;
+}
+
+.aBtn{
+  width: 180px;
+  margin-right: 10px;
+}
+.gBtn{
+  width: 180px;
+}
