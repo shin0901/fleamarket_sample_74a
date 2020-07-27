@@ -1,0 +1,31 @@
+$base-color: #eeeeee;
+$theme-color: #02cece;
+$container-color: #ffffff;
+$frame-color: #d3d3d3;
+$text-color: #333333;
+$border-color: #e9e7e7;
+
+@mixin border {
+  border-bottom: 1px solid $base-color;
+}
+@mixin padding_container {
+  padding: 20px 40px 40px 40px; 
+}
+@mixin box_design {
+  border: 1px solid $frame-color;
+  border-radius: 4px;
+}
+@mixin input-box_height {
+  height: 45px;
+}
+@mixin images-text-box_height {
+  height: 150px;
+}
+@mixin change_a_tag_to_text_color {
+  text-decoration: none;
+  color: $text-color;
+}
+@mixin change_a_tag_to_theme_color {
+  text-decoration: none;
+  color: $theme-color;
+}
