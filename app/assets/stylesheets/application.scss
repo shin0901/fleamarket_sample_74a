@@ -1,4 +1,9 @@
 @import "reset";
-@import "sell";
+@import "modules/header";
+@import "modules/main";
+@import "modules/appBanner";
+@import "modules/footer";
+@import "modules/purchaseBtn";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "sell";
