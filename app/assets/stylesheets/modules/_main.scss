@@ -241,10 +241,13 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
   }
 }
 
+
+
 img{
   width: 100%;
   vertical-align: bottom;
   border: 0;
+  height: 100%;
 }
 
 .content__btn:first-child{
@@ -257,7 +260,7 @@ img{
 }
 
 .gBtn:hover{
-  width: 195px;
+  width: 180px;
   opacity: 0.7;
 }
 
