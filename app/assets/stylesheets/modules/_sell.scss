@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
 }
@@ -5,7 +6,7 @@
   background-color: $base-color;
 }
 
-.header {
+.sell__header {
   height: 130px;
   text-align: center;
   &__logo {
@@ -69,7 +70,7 @@
   }
 }
 
-.footer {
+.sell__footer {
   height: 200px;
   display: flex;
   align-items: center;
