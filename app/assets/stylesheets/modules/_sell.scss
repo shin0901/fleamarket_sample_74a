@@ -2,19 +2,26 @@
 * {
   box-sizing: border-box;
 }
-.wrapper {
+.sell__wrapper {
   background-color: $base-color;
 }
 
 .sell__header {
   height: 130px;
-  text-align: center;
+  position: relative;
   &__logo {
-    margin: 30px 0;
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
   }
 }
 
-.container {
+.sell__container {
   background-color: $container-color;
   width: 700px;
   margin: 0 auto;
@@ -73,27 +80,17 @@
 .sell__footer {
   height: 200px;
   display: flex;
+  justify-content: center;
   align-items: center;
   &__logo {
-    margin: 0 auto;
-    width: 200px;
-    height: 70px;
-    position: relative;
+    text-align: center;
+    &__image {
+      width: 200px;
+      height: 60px;
+    }
     &__block {
-      position: absolute;
-      bottom: 0px;
-      left: 65px;
-      display: flex;
-      align-items: center;
-      &__copyright {
-        display: inline-block;
-        font-size: 20px;
-        text-decoration: none;
-        color: $container-color;
-      }
       &__str {
-        display: inline-block;
-        font-size: 13px;
+        font-size: 17px;
         text-decoration: none;
         color: $container-color;
       }
@@ -223,6 +220,8 @@
   text-decoration: underline;
 }
 .camera-logo {
+  width: 20px;
+  height: 18px;
   margin-bottom: 5px;
 }
 .caption {
