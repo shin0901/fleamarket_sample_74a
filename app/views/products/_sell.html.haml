@@ -1,0 +1,129 @@
+.sell__wrapper
+  .sell__header
+    = link_to image_tag('material/logo/logo.png', height: '60px', class: 'sell__header__logo'), root_path
+  .sell__container
+    .sell__container__images
+      .sell__container__images__titles
+        .label
+          .label__content
+            出品画像
+          .label__required
+            必須
+        %p 最大10枚までアップロードできます
+      .sell__container__images__drag-drop-box
+        %label.image-select-box
+          %input.image-select-box__hidden{ type: "file", accept: "image/*"}
+          .image-select-box__visible
+            = image_tag 'material/icon/icon_camera.png', height: '20px', class: 'camera-logo'
+            %p ドラッグアンドドロップ
+            %p またはクリックしてファイルをアップロード
+
+    .sell__container__description
+      .sell__container__description__name
+        .label
+          .label__content
+            商品名
+          .label__required
+            必須
+        %input.input-box{ placeholder: "40文字まで"}
+      .sell__container__description__text
+        .label
+          .label__content
+            商品の説明
+          .label__required
+            必須
+        %textarea.text-box{ placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" }
+        .text-counter
+          0/1000
+      
+    
+    .sell__container__details
+      .caption
+        商品の詳細
+      .sell__container__details__category
+        .label
+          .label__content
+            カテゴリー
+          .label__required
+            必須
+        %select.select-box
+        %select.select-box
+        %select.select-box
+      .sell__container__details__size
+        .label
+          .label__content
+            サイズ
+          .label__required
+            必須
+        %select.select-box
+      .sell__container__details__brand
+        .label
+          .label__content
+            ブランド
+          .label__required.label__required--not
+            任意
+        %input.input-box{ placeholder: "例）シャネル"}
+      .sell__container__details__condition
+        .label
+          .label__content
+            商品の状態
+          .label__required
+            必須
+        %select.select-box
+    .sell__container__shipping
+      .caption
+        配送について
+      .sell__container__shipping__charge
+        .label
+          .label__content
+            配送料の負担
+          .label__required
+            必須
+        %select.select-box
+      .sell__container__shipping__origin
+        .label
+          .label__content
+            発送元の地域
+          .label__required
+            必須
+        %select.select-box
+      .sell__container__shipping__days
+        .label
+          .label__content
+            発送までの日数
+          .label__required
+            必須
+        %select.select-box
+    .sell__container__price
+      .caption
+        価格（¥300〜9,999,999）
+      .sell__container__price__selling-price
+        .label
+          .label__content
+            販売価格
+          .label__required
+            必須
+        .price-box
+          ¥
+          %input.price-box__input{ placeholder: "0"}
+      .sell__container__price__commition
+        %p 販売手数料（10%）
+        %p ー
+      .sell__container__price__profit
+        %p 販売利益
+        %p ー
+    .sell__container__btn
+      .sell__container__btn__sell
+        %button.sell-btn
+          出品する
+      .sell__container__btn__save
+        %button.save-btn
+          下書きに保存
+      .sell__container__btn__return
+        %a.back-link(href = root_path)
+          もどる
+  .sell__footer
+    .sell__footer__logo
+      = link_to image_tag('material/logo/logo-white.png', height: '55px', class: 'sell__footer__logo__image'), root_path
+      .sell__footer__logo__block
+        %a.sell__footer__logo__block__str(href = root_path) © FURIMA
