@@ -1,5 +1,18 @@
-@import "mypage";
-@import "lookbuy";
+
 @import "reset";
+@import "mixin/mixin";
+@import "modules/header";
+@import "modules/main";
+@import "modules/appBanner";
+@import "modules/footer";
+@import "modules/purchaseBtn";
+@import "modules/sell";
+@import "modules/show";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+// 中北作マイページ&購入確認ページ実装
+@import "mypage";
+@import "lookbuy";
+
+	

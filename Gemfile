@@ -72,6 +72,12 @@ group :production do
   gem 'unicorn'
 end
 
-gem 'haml-rails'
+gem 'carrierwave'
+gem 'fog-aws'
 
+gem 'haml-rails'
 gem 'font-awesome-sass'
+gem 'kaminari'
+gem 'ransack'
+
+

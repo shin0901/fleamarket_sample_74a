@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  root 'items#index'
+
+  get 'products/index'
+  get 'searches/index'
+  root 'top#index'
+  resources :top, only: [:index, :new]
+  resources :products, only: [:index, :new, :show]
+
 end
