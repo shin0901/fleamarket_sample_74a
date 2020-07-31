@@ -103,6 +103,7 @@ GEM
     crass (1.0.6)
     erubi (1.9.0)
     erubis (2.7.0)
+
     excon (0.75.0)
     execjs (2.7.0)
     ffi (1.13.1)
@@ -319,7 +320,9 @@ DEPENDENCIES
   carrierwave
   chromedriver-helper
   coffee-rails (~> 4.2)
+
   fog-aws
+
   font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)

@@ -1,3 +1,4 @@
+
 @import "reset";
 @import "mixin/mixin";
 @import "modules/header";
@@ -9,3 +10,9 @@
 @import "modules/show";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+// 中北作マイページ&購入確認ページ実装
+@import "mypage";
+@import "lookbuy";
+
+	
