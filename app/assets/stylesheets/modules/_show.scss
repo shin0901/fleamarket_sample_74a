@@ -4,24 +4,23 @@
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
 
-.wrapper {
-  background-color: $base-color;
-}
 
-.header {
-  height: 200px;
-  background-color: $theme-color;
-}
+
 .breadcrumb-list {
+  border-top: 1px solid $border-color;
   border-bottom: 1px solid $border-color;
   background-color: $container-color;
   box-shadow: 0 3px 3px 0 $frame-color;
+  position: relative;
   &__text {
     padding: 10px 40px;
     font-size: 13px;
     color: $text-color;
     display: flex;
     align-items: center;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
     &__home {
       margin: 5px;
       &__link {
@@ -36,7 +35,6 @@
       margin: 5px;
       align-items: center;
       &__link {
-        
         &--home {
           @include change_a_tag_to_text_color;
           margin: 5px;
@@ -65,9 +63,13 @@
 .fas.fa-angle-right {
   color: #777777;
 }
+.show__wrapper {
+  background-color: $base-color;
+  padding: 30px 0;
+}
 .show__container {
   width: 700px;
-  margin: 30px auto;
+  margin: 0 auto;
   background-color: $base-color;
   color: $text-color;
   &__item-info {
@@ -276,6 +278,14 @@
   text-decoration: underline;
   opacity: 0.6;
 }
+.prefecture__link {
+  @include change_a_tag_to_theme_color;
+}
+.prefecture__link:hover {
+  text-decoration: underline;
+  opacity: 0.6;
+}
+
 
 .buy-btn {
   height: 60px;
@@ -320,6 +330,7 @@
   text-align: center;
   &__1 {
     height: 300px;
+    object-fit: contain;
   }
 }
 .images_table {
