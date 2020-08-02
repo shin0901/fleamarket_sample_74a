@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'products/index'
   get 'searches/index'
   root 'top#index'
