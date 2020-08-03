@@ -1,0 +1,106 @@
+.breadcrumb-list
+  .breadcrumb-list__text
+    .breadcrumb-list__text__home
+      = link_to "FURIMA", root_path, class: "breadcrumb-list__text__home__link"
+      %i.fas.fa-angle-right
+    .breadcrumb-list__text__category--main
+      = link_to "レディース", root_path, class: "breadcrumb-list__text__category__link--home"
+      %i.fas.fa-angle-right
+    .breadcrumb-list__text__category--sub
+      = link_to "ワンピース", root_path, class: "breadcrumb-list__text__category__link--sub"
+      %i.fas.fa-angle-right
+    .breadcrumb-list__text__category--sub_sub
+      = link_to "ロングワンピース", root_path, class: "breadcrumb-list__text__category__link--subsub"
+
+.mypage__body
+  .mypage__body__main
+    .left
+      .mypage-list
+        %ul.mypage-list__ul
+          %li.mypage-list__ul__li
+            マイページ
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            いいね一覧
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            出品する
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            下書き
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            出品した商品 - 出品中
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            出品した商品 - 取引中
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            出品した商品 - 売却済み
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            購入した商品 - 取引中
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            購入した商品 - 売却済み
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            お問い合わせ
+            = icon('fas', 'angle-right')
+      %h3.title
+        設定
+      .setting
+        %ul.setting-list__ul
+          %li.setting-list__ul__li
+            プロフィール
+            = icon('fas', 'angle-right')
+          %li.setting-list__ul__li
+            お届け先住所
+            = icon('fas', 'angle-right')
+          %li.setting-list__ul__li
+            支払い方法
+            = icon('fas', 'angle-right')
+          %li.setting-list__ul__li
+            メール/パスワード
+            = icon('fas', 'angle-right')
+          %li.setting-list__ul__li
+            本人情報
+            = icon('fas', 'angle-right')
+          %li.setting-list__ul__li
+            電話番号の確認
+            = icon('fas', 'angle-right')
+          %li.setting-list__ul__li
+            ログアウト   
+            = icon('fas', 'angle-right')
+    .right
+      .right__content
+        .right__content__top
+          .right__content__top--a
+            .a__myphoto
+            .a__name
+              User_name
+            .a__rank
+              %h2.a__rank__level
+                評価 0
+              %h2.a__rank__item
+                出品数 0
+        .right__content__tabs
+          %ul.tab__top
+            %li.tab__top__li.info
+              お知らせ
+            %li.tab__top__li.todo
+              やることリスト
+        .right__content__naiyou
+          .right__content__naiyou--a
+            現在、お知らせはありません
+      .right__bottom
+        .right__bottom__title
+          購入した商品
+        %ul.right__bottom__tab__buy
+          %li.right__bottom__tab__buy__li.now
+            取引中
+          %li.right__bottom__tab__buy__li.was
+            過去の取引
+        .bottom__syousai
+          .bottom__syousai--x
+            現在、取引はございません
