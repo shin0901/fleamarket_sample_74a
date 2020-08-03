@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   root 'top#index'
   resources :top, only: [:index, :new]
   resources :products, only: [:index, :new, :show]
-
+  resources :users, only: [:index, :show]
 end
