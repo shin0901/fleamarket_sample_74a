@@ -1,161 +1,180 @@
-.header{
-  height: 100px;
-  width: 100vw;
-  background-color: #ff00ff;
-}
-.boby{
-  height: 1200px;
+
+.mypage__body{
+  height: 1050px;
   width: 100vw;
   background-color: #eeeeee;
-  padding-top: 40px;
-  display: flex;
-  position: absolute;
-  .left{
-    margin-right: 90px;
-      li{
-        width: 250px;
-        padding: 16px;
-        background: #fff;
-        font-size: 14px;
-        color: #333;
-        border-right: solid 1px #eeeeee;
-        border-bottom: solid 1px #eeeeee;
-        border-left: solid 1px #eeeeee;
-        font-weight: 500; 
-        position: relative;
-        left: 170px;
-        .fas{
-          float: right;
-        }
-      }
-    .title{
-      font-size: 16px;
-      font-weight: 600;
-      margin-top: 40px;
-      margin-bottom: 8px;
-      margin-left: 8px;
-      position: relative;
-      left: 170px;
-    }
-    
-  }
-  .right{
-    width: 700px;
-    height: 480px;
-    background-color: #eeeeee;
-    position: relative;
-    left: 170px;
-    .top{
-      width: 65opx;
-      height: 200px;
-      background-color: #fff;
-      .a{
-        height: 120px;
-        width: 700px;
-        padding-top: 40px;
-        .myphoto{
-          height: 60px;
-          width: 60px;
-          border-radius: 50%;
-          background-color: black;
-          margin-left: auto;
-          margin-right: auto;;
-        }
-        .name{
-          font-size: 13px;
-          font-weight: 600;
-          text-align: center; 
-          margin-top: 8px;
-        }
-        .rank{
-          margin-top: 6px;
+  // padding: 40px;
+  &__main {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    .left{
+      margin-right: 40px;
+      .mypage-list{
+        &__ul {
+          &__li {
+          width: 250px;
+          padding: 16px;
+          background: #fff;
+          font-size: 14px;
+          color: #333;
+          border-right: solid 1px #eeeeee;
+          border-bottom: solid 1px #eeeeee;
+          border-left: solid 1px #eeeeee;
+          font-weight: 500; 
           display: flex;
-          text-align: center;
-          .revel{
-            margin-left: 296px;
-            font-size: 13px;
-            font-weight: 600;
-          }
-          .item{
-            margin-left: 16px;
-            font-size: 13px;
-            font-weight: 600;
+          justify-content: space-between;
           }
         }
-      }  
-    }
-    .tabs{
-      width: 700px;
-      ul{
-        display: flex;
-        li{
-          background-color: #dcdcdc;
-          height: 40px;
-          padding: 16px;
-          width: 350px;
-          text-align: center;
-          font-weight: 600; 
-          line-height: 37px;
-        }
-        .info{
-          background-color: #fff;
-          border-top-style: solid;
-        }
       }
-    }
-    .naiyou{
-      width: 700px;
-      height: 240px;
-      background-color: #fff;
-      .a{
-        font-size: 16px;
-        text-align: center;
-        font-weight: 600;
-        padding-top: 160px;
-        color: #ccc;
-      }
-    }
-    .bottom{
-      width: 700px;
-      height: 400px;
-      margin-top: 90px;
-      background-color: #fff;
       .title{
-        width: 700px;
-        height: 68px;
-        font-weight: 600; 
-        font-size: 20px;
-        padding-top: 30px;
-        padding-left: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 40px;
+        margin-bottom: 8px;
+        margin-left: 8px;
+        left: 170px;
       }
-      ul{
-        display: flex;
-        li{
-          height: 40px;
-          padding: 16px;
-          width: 350px;
-          text-align: center;
-          font-weight: 600; 
-          background-color: #dcdcdc;
-          line-height: 37px;
+      .setting {
+        .setting-list {
+          &__ul {
+            &__li {
+              width: 250px;
+              padding: 16px;
+              background: #fff;
+              font-size: 14px;
+              color: #333;
+              border-right: solid 1px #eeeeee;
+              border-bottom: solid 1px #eeeeee;
+              border-left: solid 1px #eeeeee;
+              font-weight: 500; 
+              display: flex;
+              justify-content: space-between;
+            }
+          }
         }
-        .now{
+      }
+    }
+    .right{
+      width: 700px;
+      height: 480px;
+      background-color: #eeeeee;
+      &__content{
+        &__top{
+          width: 65opx;
+          height: 200px;
           background-color: #fff;
-          border-top-style: solid;
+          &--a{
+            height: 120px;
+            width: 700px;
+            padding-top: 40px;
+            .a {
+              &__myphoto{
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                background-color: black;
+                margin-left: auto;
+                margin-right: auto;;
+              } 
+              &__name{
+                font-size: 13px;
+                font-weight: 600;
+                text-align: center; 
+                margin-top: 8px;
+              }
+              &__rank{
+                margin-top: 6px;
+                display: flex;
+                text-align: center;
+                &__level{
+                  margin-left: 296px;
+                  font-size: 13px;
+                  font-weight: 600;
+                }
+                &__item{
+                  margin-left: 16px;
+                  font-size: 13px;
+                  font-weight: 600;
+                }
+              }
+            }  
+          }
+        }
+        &__tabs{
+          width: 700px;
+          .tab__top{
+            display: flex;
+            &__li{
+              background-color: #dcdcdc;
+              height: 40px;
+              width: 350px;
+              text-align: center;
+              font-weight: 600; 
+              line-height: 40px;
+            }
+            .info{
+              background-color: #fff;
+              border-top-style: solid;
+            }
+          }
+        }
+        &__naiyou{
+          width: 700px;
+          height: 240px;
+          background-color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &--a{
+            font-size: 16px;
+            text-align: center;
+            font-weight: 600;
+            color: #ccc;
+          }
         }
       }
-      .syousai{
-        .x{
-          font-size: 16px;
-          text-align: center;
-          font-weight: 600;
-          padding-top: 140px;
-          color: #ccc;
+      &__bottom{
+        width: 700px;
+        height: 400px;
+        margin-top: 90px;
+        background-color: #fff;
+        &__title{
+          width: 700px;
+          height: 68px;
+          font-weight: bold; 
+          font-size: 17px;
+          padding: 18px;
+        }
+        &__tab__buy{
+          display: flex;
+          &__li{
+            height: 40px;
+            width: 350px;
+            text-align: center;
+            font-weight: 600; 
+            background-color: #dcdcdc;
+            line-height: 40px;
+          }
+          .now{
+            background-color: #fff;
+            border-top-style: solid;
+          }
+        }
+        .bottom__syousai{
+          width: 100%;
+          height: 292px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &--x{
+            font-size: 16px;
+            text-align: center;
+            font-weight: 600;
+            color: #ccc;
+          }
         }
       }
     }
   }
 }
-
-
-
