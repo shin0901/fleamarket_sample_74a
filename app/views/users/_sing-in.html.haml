@@ -1,0 +1,20 @@
+.container
+  .conteiner__header
+    
+  .conteiner__main
+    .conteiner__main__panel
+      .conteiner__main__panel__account
+        %p アカウントをお持ちでない方はこちら
+        =link_to "#" 新規会員登録
+      = form_with url: "パス" do |f|
+        .loginForm
+          .loginForm__add
+            = f.text_field :email, class: "loginForm__add__text", placeholder "メールアドレス",  
+          .loginForm__pass
+            = f.text_field :password, class: "loginForm__add__text", placeholder "パスワード",  
+          -# .loginForm__recaptcha
+          -#   .loginForm__recaptcha__g data-sitekey:
+          = f.submit class: "loginForm__submitBtn" ログイン
+          = link_to "#" パスワードをお忘れの方
+
+  .conteiner__footer
