@@ -1,0 +1,48 @@
+.sell__wrapper
+  .sell__header
+    = link_to image_tag('material/logo/logo.png', height: '60px', class: 'sell__header__logo'), root_path
+
+  .sell__container
+    .sell__container__images
+      .user__conteainer__images__titles
+        支払い方法
+
+    .entrySell__container__description
+      .sell__container__description__address
+        .label
+          .label__content
+            カード番号
+          .label__required
+            必須
+        .entryform__parallel
+          %input.input-box{ placeholder: "半角数字のみ" }
+
+        .label
+          .label__content
+            有効期限
+          .label__required
+            必須
+        .entryform__parallel
+          %input.input-box__expiration{ placeholder: "" }月
+          %input.input-box__expiration{ placeholder: "" }年
+
+        .label
+          .label__content
+            セキュリティコード
+          .label__required
+            必須
+        .entryform__parallel
+          %input.input-box{ placeholder: "カード背面４桁もしくは３桁の番号" }
+    
+    .sell__container__btn
+      .sell__container__btn__sell
+        %button.sell-btn
+          登録する
+      .sell__container__btn__return
+        %a.back-link(href = root_path)
+          もどる
+  .sell__footer
+    .sell__footer__logo
+      = link_to image_tag('material/logo/logo-white.png', height: '55px', class: 'sell__footer__logo__image'), root_path
+      .sell__footer__logo__block
+        %a.sell__footer__logo__block__str(href = root_path) © FURIMA

@@ -1,0 +1,48 @@
+.sell__wrapper
+  .sell__header
+    = link_to image_tag('material/logo/logo.png', height: '60px', class: 'sell__header__logo'), root_path
+
+  .sell__container
+    .sell__container__images
+      .user__conteainer__images__titles
+        登録情報入力
+
+    .entrySell__container__description
+      .sell__container__description__nickname
+        .label
+          .label__content
+            ニックネーム
+          .label__required
+            必須
+        %input.input-box{ placeholder: "例）振馬 太郎"}
+      .sell__container__description__address
+        .label
+          .label__content
+            メールアドレス
+          .label__required
+            必須
+        %input.input-box{ placeholder: "PC•携帯どちらでも可" }
+          .sell__container__description__password
+        .label
+          .label__content
+            パスワード
+          .label__required
+            必須
+        %input.input-box{ placeholder: "７文字以上の半角英数字" }
+      
+    
+    .sell__container__btn
+      .sell__container__btn__sell
+        %button.sell-btn
+          登録する
+      .sell__container__btn__save
+        %button.save-btn
+          下書きに保存
+      .sell__container__btn__return
+        %a.back-link(href = root_path)
+          もどる
+  .sell__footer
+    .sell__footer__logo
+      = link_to image_tag('material/logo/logo-white.png', height: '55px', class: 'sell__footer__logo__image'), root_path
+      .sell__footer__logo__block
+        %a.sell__footer__logo__block__str(href = root_path) © FURIMA
