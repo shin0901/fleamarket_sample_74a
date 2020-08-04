@@ -1,6 +1,4 @@
 .sell__wrapper
-  .sell__header
-    = link_to image_tag('material/logo/logo.png', height: '60px', class: 'sell__header__logo'), root_path
   .sell__container
     .sell__container__images
       .sell__container__images__titles
@@ -120,10 +118,6 @@
         %button.save-btn
           下書きに保存
       .sell__container__btn__return
-        %a.back-link(href = root_path)
+        %a.back-link(href = "javascript:history.back()")
           もどる
-  .sell__footer
-    .sell__footer__logo
-      = link_to image_tag('material/logo/logo-white.png', height: '55px', class: 'sell__footer__logo__image'), root_path
-      .sell__footer__logo__block
-        %a.sell__footer__logo__block__str(href = root_path) © FURIMA
+  
