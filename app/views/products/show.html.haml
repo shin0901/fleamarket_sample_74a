@@ -51,8 +51,8 @@
           %span.tax-include (税込)
           %span.shipping_charge 送料込み
       .show__container__item-info__btn
-        %button.buy-btn
-          購入画面に進む
+        = button_to '購入画面に進む', {controller: 'products', action: 'index'}, {method: :get, class:'buy-btn'}
+          
       .show__container__item-info__description
         商品の説明文が表示されます。商品の説明文が表示されます。商品の説明文が表示されます。
       .show__container__item-info__detail__table
