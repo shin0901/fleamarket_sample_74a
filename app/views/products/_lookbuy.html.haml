@@ -1,0 +1,51 @@
+.wrapper
+  .container
+    .container__images
+      %h2.container__images__titles 
+        購入内容の確認
+    .item
+      .item__image
+      .item__text
+        %p.item__text__name
+          THRASHER スラッシャー ファイヤーロゴ プリント スウェット パーカー
+        %p.item__text__money
+          送料込み (税込) ¥6,999
+    .money
+      .money__payment
+        .money__payment__a
+          支払い金額
+        .money__payment__b
+          ¥6,999
+      .money__point
+        %label.a
+          %span.e
+            %input.checkbox(type="checkbox")
+          %p.c
+            ポイント
+        %p.b
+          所持ポイント : P599
+    .pay
+      .pay__title
+        支払い方法
+      .pay__save
+        登録してください
+    .address
+      .address__title
+        %h3.a
+          配送先
+        %a.address__title__change(href="")
+          変更する  >
+      .address__date
+        %p.number
+          〒542-0076
+        %p.possion
+          大阪府大阪市中央区難波５丁目１−６０ なんばスカイオ 15階
+        %p.name
+          テックキャンプ なんばスカイオ校
+    .buy
+      %p.buy__text
+        郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
+      %p.buy__error
+        支払い方法の入力を完了してください。
+      %input.buy__btn(type="button" value="購入する")
+      
