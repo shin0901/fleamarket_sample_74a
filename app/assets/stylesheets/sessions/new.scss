@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  color: rgb(51, 51, 51);
+}
+
+.mainContainer{
+  display: block;
+  background-color: #eeeeee;
+  &__panel{
+    width: 456px;
+    margin: 0 auto;
+    background: #fff;
+    text-align: center;
+    &__noAccount{
+      padding: 40px 64px;
+      border-bottom: solid 1px #eeeeee;
+    }
+  }
+}
+
+.new_user{
+  display: block;
+  text-align: center;
+  .loginForm-inner{
+    padding: 24px 64px 32px;
+    border: 0;
+    &__box :first-child{
+      margin: 0;
+    }
+    &__box{
+      margin: 24px 0 0;
+      .loginForm-text{
+        margin: 0;
+        width: 100%;
+      }
+      .inputDefault{
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.mainContainer__panel__noAccount p{
+  font-size: 14px;
+}
+
+.mainContainer__panel__noAccount a{
+  display: block;
+  margin: 8px 0 0;
+  border-radius: 4px;
+  border: 1px solid #0099e8;
+  background: #0099e8;
+  color: #fff;
+  line-height: 40px;
+  text-decoration: none;
+}
+
+.loginBtn{
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
+
+.btnDefault{
+  display: block;
+  width: 100%;
+  line-height: 40px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.forgetPassword {
+  color: #0099e8;
+  text-decoration: none;
+  font-size: 13px;
+}
+

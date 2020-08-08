@@ -81,11 +81,14 @@
 .sell__footer {
   background-color: $base-color;
   height: 200px;
-  display: flex;
   justify-content: center;
   align-items: center;
+  .navbar{
+    text-align: center;
+  }
   &__logo {
     text-align: center;
+    margin-top: 30px;
     &__image {
       width: 200px;
       height: 60px;
@@ -231,4 +234,22 @@
   font-size: 13px;
   font-weight: bold;
   color: #888888;
+}
+
+.sell__footer li:first-child{
+  margin: 0;
+}
+
+.sell__footer ul{
+  font-size: 12px;
+}
+
+.sell__footer li{
+  display: inline-block;
+  margin: 30px 0 0 16px;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: #333
 }
