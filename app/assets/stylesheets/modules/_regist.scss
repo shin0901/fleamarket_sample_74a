@@ -3,3 +3,16 @@
   width: 480px;
   margin: 0 auto;
 }
+
+.regist-btn {
+  width: 100%;
+  height: 45px;
+  border-radius: 4px;
+  margin: 12px 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: $theme-color;
+  border-style: none;
+  color: $container-color;
+}
