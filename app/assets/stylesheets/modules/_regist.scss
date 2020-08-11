@@ -2,6 +2,8 @@
   background-color: $container-color;
   width: 480px;
   margin: 0 auto;
+
+
 }
 
 .user__container__images__titles {
@@ -39,5 +41,37 @@
   &__gray {
     color: gray;
     font-size: 13px;
+  }
+}
+
+
+.entryform__parallel {
+  display: flexbox;
+}
+
+.regist-inputBox {
+  &__name {
+    @include box_design;
+    @include input-box_height;
+  width: 170px;
+  padding: 10px;
+  margin: 7px 10px;
+  font-size: 15px;
+  }
+  &__bod {
+    @include box_design;
+    @include input-box_height;
+    width: 90px;
+    padding: 10px;
+    margin: 7px 10px;
+    font-size: 15px;
+  }
+  &__expiration {
+    @include box_design;
+    @include input-box_height;
+    width: 160px;
+    padding: 10px;
+    margin: 7px 5px 7px 0;
+    font-size: 15px;
   }
 }

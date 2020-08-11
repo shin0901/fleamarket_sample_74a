@@ -1,0 +1,58 @@
+.user__conteainer__images__titles {
+  font-size: 24px;
+  color: $text-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.entrySell__container__description  {
+  background-color: $container-color;
+  width: 480px;
+  margin: 0 auto;
+  @include border;
+  @include padding_container;
+}
+
+.cautionMess {
+  font-size: 13px;
+  margin-bottom: 30px;
+  &__gray {
+    color: gray;
+    font-size: 13px;
+  }
+}
+
+.entryform__parallel {
+  display: space-between;
+}
+
+.regist-inputBox__parallel {
+  @include box_design;
+  @include input-box_height;
+  width: 170px;
+  padding: 10px;
+  margin: 7px 10px;
+  font-size: 15px;
+  &__paraleel {
+
+  }
+}
+
+.regist-inputBox__bod {
+  @include box_design;
+  @include input-box_height;
+  width: 90px;
+  padding: 10px;
+  margin: 7px 10px;
+  font-size: 15px;
+}
+
+.regist-inputBox__expiration {
+  @include box_design;
+  @include input-box_height;
+  width: 160px;
+  padding: 10px;
+  margin: 7px 10px;
+  font-size: 15px;
+}

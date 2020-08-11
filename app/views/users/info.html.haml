@@ -1,9 +1,10 @@
-= render "products/header"
 .sell__wrapper
   .sell__header
+    = link_to image_tag('material/logo/logo.png', height: '60px', class: 'sell__header__logo'), root_path
+
   .sell__container
     .sell__container__images
-      .user__container__images__titles
+      .user__conteainer__images__titles
         会員情報入力
 
     .entrySell__container__description
@@ -18,8 +19,8 @@
           .label__required
             必須
         .entryform__parallel
-          %input.regist-inputBox__name{ placeholder: "例）振馬" }
-          %input.regist-inputBox__name{ placeholder: "例）太郎" }
+          %input.regist-inputBox__parallel{ placeholder: "例）振馬" }
+          %input.regist-inputBox__parallel{ placeholder: "例）太郎" }
 
         .label
           .label__content
@@ -27,8 +28,8 @@
           .label__required
             必須
         .entryform__parallel
-          %input.regist-inputBox__name{ placeholder: "例）フリマ" }
-          %input.regist-inputBox__name{ placeholder: "例）タロウ" }
+          %input.regist-inputBox__parallel{ placeholder: "例）フリマ" }
+          %input.regist-inputBox__parallel{ placeholder: "例）タロウ" }
 
         .label
           .label__content
@@ -53,4 +54,8 @@
       .sell__container__btn__return
         %a.back-link(href = root_path)
           もどる
-= render "products/footer"
+  .sell__footer
+    .sell__footer__logo
+      = link_to image_tag('material/logo/logo-white.png', height: '55px', class: 'sell__footer__logo__image'), root_path
+      .sell__footer__logo__block
+        %a.sell__footer__logo__block__str(href = root_path) © FURIMA

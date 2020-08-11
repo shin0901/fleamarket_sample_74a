@@ -14,7 +14,7 @@
             .label__required
               必須
           = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: "例）振馬 太郎", class: 'input-box'
-          -# :emailとなっているが、:nicknameに変更するためカラムの追加が必要になる
+          -# :エラーを避けるために :email となっているが、ニックネーム用のカラム名に変更する必要あり。カラムの追加後対応。
           .label
             .label__content
               メールアドレス
@@ -33,7 +33,4 @@
           .sell__container__btn__sell
             = f.submit "登録する", class: 'regist-btn'
         = render "devise/shared/links"
-        = link_to "info", "tempoS/info"
 = render "products/footer"
-= render "info"
-= render "payment"
