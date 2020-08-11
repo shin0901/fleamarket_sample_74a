@@ -1,0 +1,61 @@
+.sell__wrapper
+  .sell__header
+    = link_to image_tag('material/logo/logo.png', height: '60px', class: 'sell__header__logo'), root_path
+
+  .sell__container
+    .sell__container__images
+      .user__container__images__titles
+        会員情報入力
+
+    .entrySell__container__description
+      .cautionMess
+        安全・安心にご利用いただくために、お客様の本人確認情報の登録にご協力ください。
+        他のお客様に公開されることはありません。
+
+      .sell__container__description__address
+        .label
+          .label__content
+            お名前(全角)
+          .label__required
+            必須
+        .entryform__parallel
+          %input.input-box__parallel{ placeholder: "例）振馬" }
+          %input.input-box__parallel{ placeholder: "例）太郎" }
+
+        .label
+          .label__content
+            お名前カナ(全角)
+          .label__required
+            必須
+        .entryform__parallel
+          %input.input-box__parallel{ placeholder: "例）フリマ" }
+          %input.input-box__parallel{ placeholder: "例）タロウ" }
+
+        .label
+          .label__content
+            生年月日
+          .label__required
+            必須
+        .entryform__parallel
+          %input.input-box__bod{ placeholder: "" }年
+          %input.input-box__bod{ placeholder: "" }月
+          %input.input-box__bod{ placeholder: "" }日
+      
+        .cautionMess__gray
+          ※本人情報は正しく入力してください。登録後、修正するにはお時間をいただく場合がございます。
+    
+    .sell__container__btn
+      .sell__container__btn__sell
+        %button.sell-btn
+          登録する
+      .sell__container__btn__save
+        %button.save-btn
+          下書きに保存
+      .sell__container__btn__return
+        %a.back-link(href = root_path)
+          もどる
+  .sell__footer
+    .sell__footer__logo
+      = link_to image_tag('material/logo/logo-white.png', height: '55px', class: 'sell__footer__logo__image'), root_path
+      .sell__footer__logo__block
+        %a.sell__footer__logo__block__str(href = root_path) © FURIMA
