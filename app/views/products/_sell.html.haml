@@ -23,14 +23,16 @@
             商品名
           .label__required
             必須
-        %input.input-box{ placeholder: "40文字まで"}
+        = form_with model: @product do |form|
+          = form.text_field :productName, {placeholder: "40文字まで", class: "input-box"}
       .sell__container__description__text
         .label
           .label__content
             商品の説明
           .label__required
             必須
-        %textarea.text-box{ placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" }
+        = form_with model: @product do |form|
+          = form.text_area :description, {placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "text-box"}
         .text-counter
           0/1000
       
@@ -103,7 +105,8 @@
             必須
         .price-box
           ¥
-          %input.price-box__input{ placeholder: "0"}
+          = form_with model: @product do |form|
+            = form.number_field :price, { placeholder: "0", class: "price-box__input", min: 300, max: 9999999 }
       .sell__container__price__commition
         %p 販売手数料（10%）
         %p ー

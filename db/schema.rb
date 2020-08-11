@@ -19,10 +19,12 @@ ActiveRecord::Schema.define(version: 2020_08_01_112700) do
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "produstName"
-    t.string "image"
+    t.string "productName", null: false
+    t.text "description", null: false
+    t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["productName"], name: "index_products_on_productName"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
