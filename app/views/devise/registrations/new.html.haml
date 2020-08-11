@@ -2,7 +2,7 @@
 .sell__wrapper
   .regist__container
     .sell__container__images
-      .user__conteainer__images__titles
+      .user__container__images__titles
         登録情報入力
     .sell__container__images
       .sell__container__images__titles
@@ -13,7 +13,8 @@
               ニックネーム
             .label__required
               必須
-          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例）振馬 太郎", class: 'input-box'
+          = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: "例）振馬 太郎", class: 'input-box'
+          -# :emailとなっているが、:nicknameに変更するためカラムの追加が必要になる
           .label
             .label__content
               メールアドレス
