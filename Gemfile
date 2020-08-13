@@ -80,4 +80,4 @@ gem 'font-awesome-sass'
 gem 'kaminari'
 gem 'ransack'
 gem 'devise'
-
+gem 'active_hash'

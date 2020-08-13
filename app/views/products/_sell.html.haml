@@ -55,7 +55,9 @@
             サイズ
           .label__required
             必須
-        %select.select-box
+        = form_with model: @product do |form|
+          = form.collection_select( :size_id, Size.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
+        -# %select.select-box
       .sell__container__details__brand
         .label
           .label__content
@@ -69,7 +71,8 @@
             商品の状態
           .label__required
             必須
-        %select.select-box
+        = form_with model: @product do |form|
+          = form.collection_select( :condition_id, Condition.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
     .sell__container__shipping
       .caption
         配送について
@@ -79,21 +82,25 @@
             配送料の負担
           .label__required
             必須
-        %select.select-box
+        = form_with model: @product do |form|
+          = form.collection_select( :shippingCharge_id, ShippingCharge.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
       .sell__container__shipping__origin
         .label
           .label__content
             発送元の地域
           .label__required
             必須
-        %select.select-box
+        = form_with model: @product do |form|
+          = form.collection_select( :prefecture_id, Prefecture.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
+        -# %select.select-box
       .sell__container__shipping__days
         .label
           .label__content
             発送までの日数
           .label__required
             必須
-        %select.select-box
+        = form_with model: @product do |form|
+          = form.collection_select( :daysUntilShipping_id, DaysUntilShipping.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
     .sell__container__price
       .caption
         価格（¥300〜9,999,999）
