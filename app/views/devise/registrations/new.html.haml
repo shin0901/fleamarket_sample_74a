@@ -1,21 +1,39 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+= render "products/header"
+.sell__wrapper
+  .regist__container
+    .sell__container__images
+      .user__container__images__titles
+        登録情報入力
+    .sell__container__images
+      .sell__container__images__titles
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = render "devise/shared/error_messages", resource: resource
+          .label
+            .label__content
+              ニックネーム
+            .label__required
+              必須
+          = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: "例）振馬 太郎", class: 'input-box'
+          -# :エラーを避けるために :email となっているが、ニックネーム用のカラム名に変更する必要あり。カラムの追加後対応。
+          .label
+            .label__content
+              メールアドレス
+            .label__required
+              必須
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC•携帯どちらでも可", class: 'input-box'
+          .label
+            .label__content
+              パスワード
+            .label__required
+              必須
+          - if @minimum_password_length
+            %em
+          = f.password_field :password, autocomplete: "new-password", placeholder: "７文字以上の半角英数字", class: 'input-box'
+          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワードの再入力", class: 'input-box'
+          .sell__container__btn__sell
+            = f.submit "登録する", class: 'regist-btn'
+        = render "devise/shared/links"
+= render "products/footer"
+= render "info"
+= render "add"
+= render "payment"
