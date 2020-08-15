@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :users 
-  get 'products/index'
+  devise_for :users, controller: {
+    registraitons: 'users/registrations',
+    sessions:      'users/sessions',
+  }
+  
   get 'searches/index'
-  root 'top#index'
+  root to: 'top#index'
   resources :top, only: [:index, :new]
   resources :products, only: [:index, :new, :show]
   resources :users, only: [:index, :show]
