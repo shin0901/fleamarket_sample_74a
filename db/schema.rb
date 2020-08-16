@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 2020_08_14_040319) do
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "first_name", null: false
-    t.string "familly_name", null: false
+    t.string "family_name", null: false
     t.string "first_name_kana", null: false
-    t.string "familly_name_kana", null: false
+    t.string "family_name_kana", null: false
     t.date "birth_year", null: false
     t.date "birth_month", null: false
     t.date "birth_day", null: false
