@@ -13,7 +13,7 @@
               ニックネーム
             .label__required
               必須
-          = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: "例）振馬 太郎", class: 'input-box'
+          = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例）振馬 太郎", class: 'input-box'
           -# :エラーを避けるために :email となっているが、ニックネーム用のカラム名に変更する必要あり。カラムの追加後対応。
           .label
             .label__content

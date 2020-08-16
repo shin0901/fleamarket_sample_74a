@@ -93,6 +93,15 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
   padding-right: 30px;
 }
 
+.listRight a{
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  color: #333;
+  text-decoration: none;
+  line-height: 32px;
+}
+
 .listRight__item__login a{
   display: flex;
   align-items: center;
