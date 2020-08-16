@@ -4,7 +4,7 @@
       .headerBox__inner__main__icon
         = link_to image_tag('/material/logo/logo.png', height: '40px', class: 'headerBox__inner__main__icon__logo'), root_path
       .headerBox__inner__main__searchBox
-        = search_form_for @search , url:searches_index_path do |f|
+        = search_form_for @search, url:searches_index_path do |f|
           = f.search_field :productName_cont,  class: 'headerBox__inner__main__searchBox__form', placeholder: 'キーワードから探す', id: "form__box"
           %button{type: "submit", class: 'search__button'}
             = image_tag('/material/icon/icon-search 1.png')
