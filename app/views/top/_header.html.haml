@@ -13,11 +13,10 @@
         %li.listLeft__btn
           = link_to "商品一覧", "#", id: "product-btn"
       %ul.listRight
-        - if user_signed_in?
-          = link_to "お気に入り"
-          = link_to "お知らせ"
-          = link_to "やることリスト"
-          = link_to "マイページ"
+        = link_to "お気に入り"
+        = link_to "お知らせ"
+        = link_to "やることリスト"
+        = link_to "マイページ"
         %li.listRight__item__login
           = link_to "ログイン", new_user_session_path
         %li.listRight__item__new
