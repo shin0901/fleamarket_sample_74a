@@ -1,0 +1,99 @@
+.regist__container {
+  background-color: $container-color;
+  width: 456px;
+  margin: 0 auto;
+
+
+}
+
+.user__container__images__titles {
+  font-size: 24px;
+  color: $text-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.regist-btn {
+  width: 100%;
+  height: 45px;
+  border-radius: 4px;
+  margin: 12px 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: $theme-color;
+  border-style: none;
+  color: $container-color;
+}
+
+.temporary__regist-btn {
+  width: 100%;
+  height: 45px;
+  border-radius: 4px;
+  margin: 12px 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: $frame-color;
+  border-style: none;
+  color: $container-color;
+}
+
+.entrySell__container__description  {
+  background-color: $container-color;
+  width: 456px;
+  margin: 0 auto;
+  @include border;
+  @include padding_container;
+}
+
+.cautionMess {
+  font-size: 13px;
+  margin-bottom: 30px;
+  &__gray {
+    color: $frame-color;
+    font-size: 13px;
+  }
+}
+
+
+.entryform__parallel {
+  display: flexbox;
+}
+
+.label__any {
+  margin-left: 7px;
+  color: $container-color;
+  font-size: 12px;
+  padding: 1px 3px;
+  border-radius: 2px;
+  background-color: $frame-color;
+}
+
+.regist-inputBox {
+  &__name {
+    @include box_design;
+    @include input-box_height;
+  width: 163px;
+  padding: 10px;
+  margin: 7px 10px;
+  font-size: 15px;
+  }
+  &__bod {
+    @include box_design;
+    @include input-box_height;
+    width: 85px;
+    padding: 10px;
+    margin: 7px 10px;
+    font-size: 15px;
+  }
+  &__expiration {
+    @include box_design;
+    @include input-box_height;
+    width: 160px;
+    padding: 10px;
+    margin: 7px 5px 7px 0;
+    font-size: 15px;
+  }
+}
