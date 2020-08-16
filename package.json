@@ -1,5 +1,7 @@
 {
   "name": "fleamarket_sample_74a",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
 }
