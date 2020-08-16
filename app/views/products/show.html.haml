@@ -23,26 +23,26 @@
         .show__container__item-info__detail__images
           .current_image
             = image_tag 'material/pict/show1.jpg', class: 'current_image__1'
-          .images_table
-            .images_table__box
+          %ul.images_table
+            %li.images_table__box
               = image_tag 'material/pict/show1.jpg', class: 'images_table__image'
-            .images_table__box
+            %li.images_table__box
               = image_tag 'material/pict/show8.jpg', class: 'images_table__image'
-            .images_table__box
+            %li.images_table__box
               = image_tag 'material/pict/show9.jpg', class: 'images_table__image'
-            .images_table__box
+            %li.images_table__box
               = image_tag 'material/pict/show4.jpg', class: 'images_table__image'
-            .images_table__box
+            %li.images_table__box
               = image_tag 'material/pict/show8.jpg', class: 'images_table__image'
-            .images_table__box
+            %li.images_table__box
               = image_tag 'material/pict/show9.jpg', class: 'images_table__image'
-            .images_table__box
+            %li.images_table__box
               = image_tag 'material/pict/show4.jpg', class: 'images_table__image'
-            .images_table__box
+            %li.images_table__box
               = image_tag 'material/pict/show8.jpg', class: 'images_table__image'
-            .images_table__box
+            %li.images_table__box
               = image_tag 'material/pict/show9.jpg', class: 'images_table__image'
-            .images_table__box
+            %li.images_table__box
               = image_tag 'material/pict/show4.jpg', class: 'images_table__image'
 
       .show__container__item-info__price-info
@@ -51,8 +51,8 @@
           %span.tax-include (税込)
           %span.shipping_charge 送料込み
       .show__container__item-info__btn
-        %button.buy-btn
-          購入画面に進む
+        = button_to '購入画面に進む', {controller: 'products', action: 'index'}, {method: :get, class:'buy-btn'}
+          
       .show__container__item-info__description
         商品の説明文が表示されます。商品の説明文が表示されます。商品の説明文が表示されます。
       .show__container__item-info__detail__table
