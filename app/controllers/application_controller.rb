@@ -4,8 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
-    @search = Product.ransack(params[:q])
-    @products = @search.result
+
   end
 
   private
