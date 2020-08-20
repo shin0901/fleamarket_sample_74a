@@ -45,14 +45,6 @@ ActiveRecord::Schema.define(version: 2020_08_14_040319) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["brand_id"], name: "index_products_on_brand_id"
-    t.index ["condition_id"], name: "index_products_on_condition_id"
-    t.index ["days_until_shipping_id"], name: "index_products_on_days_until_shipping_id"
-    t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
-    t.index ["productName"], name: "index_products_on_productName"
-    t.index ["shipping_charge_id"], name: "index_products_on_shipping_charge_id"
-    t.index ["size_id"], name: "index_products_on_size_id"
-  end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "first_name", null: false
