@@ -6,4 +6,8 @@ class UsersController < ApplicationController
   def show
     @search = Product.ransack(params[:q])
   end
+
+  protected
+
+  
 end

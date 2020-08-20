@@ -4,8 +4,8 @@
       .headerBox__inner__main__icon
         = link_to image_tag('/material/logo/logo.png', height: '40px', class: 'headerBox__inner__main__icon__logo'), root_path
       .headerBox__inner__main__searchBox
-        = search_form_for @search , url:searches_index_path do |f|
-          = f.search_field :productName_cont,  class: 'headerBox__inner__main__searchBox__form', placeholder: 'キーワードから探す', id: "form__box"
+        = search_form_for @search, url:searches_index_path do |f|
+          = f.search_field :name_cont,  class: 'headerBox__inner__main__searchBox__form', placeholder: 'キーワードから探す', id: "form__box"
           %button{type: "submit", class: 'search__button'}
             = image_tag('/material/icon/icon-search 1.png')
     .headerBox__inner__nav
@@ -18,10 +18,11 @@
           = link_to "お知らせ"
           = link_to "やることリスト"
           = link_to "マイページ"
-        %li.listRight__item__login
-          = link_to "ログイン", new_user_session_path
-        %li.listRight__item__new
-          = link_to "新規会員登録", new_user_registration_path
+        - else
+          %li.listRight__item__login
+            = link_to "ログイン", new_user_session_path
+          %li.listRight__item__new
+            = link_to "新規会員登録", new_user_registration_path
 
 
 

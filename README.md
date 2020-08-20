@@ -58,10 +58,10 @@
 ### Association
 - belongs_to :user
 
-## itemsテーブル
+## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, add_index: true|
+|productName|string|null: false, add_index: true|
 |description|text|null: false|
 |price|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
