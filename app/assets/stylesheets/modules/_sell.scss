@@ -38,6 +38,7 @@
   &__description {
     @include border;
     @include padding_container;
+    width: 700px;
   }
   &__details {
     @include border;

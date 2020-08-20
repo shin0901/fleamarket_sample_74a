@@ -4,7 +4,8 @@ class Size < ActiveHash::Base
     { id: 2, name: "S" },
     { id: 3, name: "M" },
     { id: 4, name: "L" },
-    { id: 5, name: "XL" }
+    { id: 5, name: "XL" },
+    { id: 6, name: "FREE SIZE" }
   ]
   include ActiveHash::Associations
   has_many :products
