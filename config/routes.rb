@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :top, only: [:index, :new]
   resources :products, only: [:index, :new, :create, :show]
   resources :users, only: [:index, :show]
-  resources :imags, only: [:create]
+  resources :images, only: [:new, :create] 
 end

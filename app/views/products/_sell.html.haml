@@ -13,7 +13,7 @@
         %label.image-select-box
           .image-select-box__hidden
             = form_for(@products, url: products_path ) do |f| 
-              = f.file_field :image
+              = f.file_field :image, type: 'file'
           .image-select-box__visible
             = image_tag 'material/icon/icon_camera.png', height: '20px', class: 'camera-logo'
     .sell__container__description
