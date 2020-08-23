@@ -1,7 +1,12 @@
 class BrandsController < ApplicationController
 
+  def new
+    @brand = Brand.new
+    @brand.products.build
+  end
+
   def create
-    Brand.create(brand_params)
+    @brand = Brand.new(brand_params)
   end
 
 end
