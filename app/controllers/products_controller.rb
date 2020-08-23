@@ -26,8 +26,5 @@ class ProductsController < ApplicationController
     :prefecture_id, :days_until_shipping_id, :shipping_charge_id, :brand_id).merge(user_id: current_user.id).merge(category_id: 1)
   end
 
-  def search
-
-  end
 
 end

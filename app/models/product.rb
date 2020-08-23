@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
 
-  enum status: { published: 0, draft: 1, sold_out: 2}
+  enum status: { published: 0, sold_out: 1}
    
   validates :name, presence: true, length: {maximum:40}
   validates :description, presence: true, length: {maximum:1000}
