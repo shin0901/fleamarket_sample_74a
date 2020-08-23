@@ -34,6 +34,13 @@
       font-size: 13px;
       color: $text-color;
     }
+    &__drag-drop-box{
+      .product_image{
+        height: 100px;
+        width: 20%;
+        float: left;
+      }
+    }
   }
   &__description {
     @include border;
@@ -124,6 +131,8 @@
   }
 }
 
+
+
 .input-box {
   @include box_design;
   @include input-box_height;
@@ -147,16 +156,15 @@
     @include images-text-box_height;
     width: 100%;
     cursor: pointer;
-    display: none;
     position: absolute;
     left: 0;
+
   }
   &__visible {
     @include images-text-box_height;
     cursor: pointer;
     width: 100%;
     line-height: 20px;
-    padding: 35px;
     background-color: $base-color;
     border: 1px dashed $frame-color;
     font-size: 12px;

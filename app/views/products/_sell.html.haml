@@ -8,14 +8,14 @@
           .label__required
             必須
         %p 最大10枚までアップロードできます
+        %p ↓ クリックしてファイルをアップロード ↓
       .sell__container__images__drag-drop-box
         %label.image-select-box
-          %input.image-select-box__hidden{ type: "file", accept: "image/*"}
+          .image-select-box__hidden
+            = form_for(@products, url: products_path ) do |f| 
+              = f.file_field :image
           .image-select-box__visible
             = image_tag 'material/icon/icon_camera.png', height: '20px', class: 'camera-logo'
-            %p ドラッグアンドドロップ
-            %p またはクリックしてファイルをアップロード
-
     .sell__container__description
       .sell__container__description__name
         .label
