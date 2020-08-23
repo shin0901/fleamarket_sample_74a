@@ -73,6 +73,8 @@ group :production do
 end
 
 gem 'carrierwave'
+gem 'rmagick'
+
 gem 'fog-aws'
 
 gem 'haml-rails'

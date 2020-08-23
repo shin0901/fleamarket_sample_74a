@@ -4,13 +4,15 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-
+    @products = Image.new
   end
 
   def show
   end
 
   def create
+
+    Image.create(img_up)
     @product = Product.new(product_params)
     if @product.save
       redirect_to root_path, notice:'商品出品が完了しました'
@@ -25,6 +27,12 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :description, :price, :condition_id, :size_id, 
     :prefecture_id, :days_until_shipping_id, :shipping_charge_id, :brand_id).merge(user_id: current_user.id).merge(category_id: 1)
   end
+  
+  def img_up
+    params.require(:images).permit(:image)
+  end
 
+
+  
 
 end
