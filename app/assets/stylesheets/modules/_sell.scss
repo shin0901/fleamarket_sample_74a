@@ -254,3 +254,18 @@ nav ul li a{
   text-decoration: none;
   color: #333
 }
+
+.product__sell__errors {
+  color: red;
+  text-align: center;
+}
+
+.notifications {
+  animation: fadeIn 1.5s ease 0s 1 normal;
+  -webkit-animation: fadeIn 1.5s ease 0s 1 normal;
+  color: white;
+  text-align: center;  
+  .notice {
+    background-color: $theme-color;
+  }
+}
