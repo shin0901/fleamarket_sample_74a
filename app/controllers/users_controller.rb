@@ -7,6 +7,9 @@ class UsersController < ApplicationController
     @search = Product.ransack(params[:q])
   end
 
+  def delete
+  end
+
   protected
 
   
