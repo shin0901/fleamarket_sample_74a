@@ -25,7 +25,7 @@
 
 $(function(){
     //fileが選択された時に発火するイベント
-  $('#image_image').change(function(e){
+  $('#product_images_attributes_0_image').change(function(e){
     //file_fieldを取得
     var file = e.target.files[0];
     //選択したfileのオブジェクトをpropで取得

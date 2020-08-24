@@ -8,8 +8,8 @@ $(function(){
       $('#commition_field').html("¥" + commition.toLocaleString());
       $('#profit_field').html("¥" + profit.toLocaleString());
     } else {
-      $('#commition_feild').html('-');
-      $('#profit_feild').html('-');
+      $('#commition_field').html('ー');
+      $('#profit_field').html('ー');
     }
   })
 

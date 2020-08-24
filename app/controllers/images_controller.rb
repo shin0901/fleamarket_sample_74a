@@ -1,15 +1,15 @@
-class ImagsController < ApplicationController
+class ImagesController < ApplicationController
 
   def new
   end
 
   def create
-    Image.create(img_up)
+    @image = Image.new(img_up)
   end
 
   private
   def img_up
-    params.require(:images).permit(:image)
+    params.require(:image).permit(:image, :product_id)
   end
 
 end
