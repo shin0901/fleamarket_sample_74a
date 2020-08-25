@@ -6,5 +6,9 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
   validates :email, presence: true
-  validates :password, presence: true, length: { minimun: 7, maximum: 128 }
+  validates :password, presence: true, length: { minimum: 7, maximum: 128 }
+
+  has_one :address
+  has_one :profile, :dependent => :destroy
+
 end
