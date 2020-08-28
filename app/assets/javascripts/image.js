@@ -23,39 +23,38 @@
 //   });
 // });
 
-$(function(){
-    //fileが選択された時に発火するイベント
-  $('#product_images_attributes_0_image').change(function(e){
-    //file_fieldを取得
-    var file = e.target.files[0];
-    //選択したfileのオブジェクトをpropで取得
-    var file = $('input[type="file"]').prop('files')[0];
-    //FileReaderのreadAsDataURLで指定したFileオブジェクトを読み込む
-    var fileReader = new FileReader();
-    //読み込みが完了すると、srcにfileのURLを格納
-    fileReader.onloadend = function() {
-      var src = fileReader.result
-      var html= `<div class='item-image' data-image="${file.name}">
-                  <div class=' item-image__content'>
-                    <div class='item-image__content--icon'>
-                      <img src=${src} width="114" height="80" >
-                    </div>
-                  </div>
-                  <div class='item-image__operetion'>
-                    <button class='item-image__operetion--delete'>削除</button>
-                  </div>
-                </div>`
-      //image_box__container要素の前にhtmlを差し込む
-      $('.sell__container__images__drag-drop-box').before(html);
-    }
-    fileReader.readAsDataURL(file);
+// $(fu
+
+
+
+
+// ここからカリキュラムに沿った記述
+$(document).on('turbolinks:load', ()=> {
+  // 画像用のinputを生成する関数
+  const buildFileField = (index)=> {
+    const html = `<div data-index="${index}" class="js-file_group">
+                    <input class="js-file" type="file"
+                    name="product[images_attributes][${index}][image]"
+                    id="product_images_attributes_${index}_image">
+                    <div class="js-remove">削除</div>
+                  </div>`;
+    return html;
+  }
+
+  // file_fieldのnameに動的なindexをつける為の配列
+  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+
+  $('#image-box').on('change', '.js-file', function(e) {
+    // fileIndexの先頭の数字を使ってinputを作る
+    $('#image-box').append(buildFileField(fileIndex[0]));
+    fileIndex.shift();
+    // 末尾の数に1足した数を追加する
+    fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+  });
+
+  $('#image-box').on('click', '.js-remove', function() {
+    $(this).parent().remove();
+    // 画像入力欄が0個にならないようにしておく
+    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
 });
-
-$(document).on("click", '.item-image__operetion--delete', function(){
-  //プレビュー要素を取得
-  var target_image = $(this).parent().parent()
-  //プレビューを削除
-  target_image.remove();  
-})
-
