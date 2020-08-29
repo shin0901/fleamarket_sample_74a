@@ -4,8 +4,8 @@ class Product < ApplicationRecord
    
   validates :name, presence: true, length: {maximum:40}
   validates :description, presence: true, length: {maximum:1000}
-  validates :price, presence: true
   validates_associated :images
+  validates :price, presence: true
   validates :images, presence: true
 
   has_many :images, dependent: :destroy
