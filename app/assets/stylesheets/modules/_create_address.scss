@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+.compContainer{
+  display: block;
+  background-color: #eeeeee;
+  height: 410px;
+  &__panel{
+    width: 456px;
+    margin: 0 auto;
+    background: #fff;
+    text-align: center;
+    height: 410px;
+    &__image{
+      padding: 125px 64px 0px 64px;
+    }
+    &__message{
+      padding: 30px 64px 0px 64px;
+    }
+  }
+}
+
+.compContainer__panel__image img{
+  width: 50px;
+}
+
+.compContainer__panel__message p{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.compContainer__panel__message a{
+  text-decoration: none;
+  color: deepskyblue;
+  border-bottom: solid 1px;
+}
+
+
