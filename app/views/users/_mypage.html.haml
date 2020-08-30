@@ -65,7 +65,7 @@
             電話番号の確認
             = icon('fas', 'angle-right')
           %li.setting-list__ul__li
-            ログアウト   
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
             = icon('fas', 'angle-right')
     .right
       .right__content
