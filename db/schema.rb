@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_091337) do
     t.string "family_name_kana", null: false
     t.string "first_name_kana", null: false
     t.string "postalcode", null: false
-    t.string "prefecture", null: false
+    t.string "prefecturera", null: false
     t.string "city", null: false
     t.string "address", null: false
     t.string "buildingname"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_091337) do
     t.string "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
