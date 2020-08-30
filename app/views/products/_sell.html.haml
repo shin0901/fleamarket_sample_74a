@@ -15,17 +15,14 @@
             .label__required
               必須
           %p 最大10枚までアップロードできます
-          %p ↓ クリックしてファイルをアップロード ↓
         #image-box.sell_container_images__drag-drop-box
-          %label.image-select-box
           #file_fields
             = f.fields_for :images do |i|
               .js-file_group{data: {index: i.index}}
                 = i.file_field :image, class: 'js-file'
-                %span.js-remove
-                  削除
             .image-select-box__visible
               = image_tag 'material/icon/icon_camera.png', height: '20px', class: 'camera-logo'
+              %p クリックしてファイルをアップロード 
     
       .sell__container__description
         .sell__container__description__name

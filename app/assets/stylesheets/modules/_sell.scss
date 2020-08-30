@@ -195,6 +195,21 @@
     text-align: center;
   }
 }
+.js-file {
+  display: none;
+}
+.item-image__operetion {
+  &--delete {
+    color: #87cefa;
+    cursor: pointer;
+    border-style: none;
+    background-color: $container-color;
+  }
+  &--delete:hover {
+    text-decoration: underline;
+
+  }
+}
 
 .select-box {
   @include box_design;
