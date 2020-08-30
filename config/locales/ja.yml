@@ -3,10 +3,12 @@ ja:
     models:
       user: ユーザー
       image: 画像
+      address: アドレス
     attributes:
       user:
-        name: 名前
+        nickname: 名前
         email: メールアドレス
+        password: パスワード
       product:
         name: 商品名
         description: 商品の説明
@@ -18,3 +20,12 @@ ja:
         price: 販売価格
         category: カテゴリー
         images: 商品画像
+      address:
+        family_name: 苗字
+        first_name: 名前
+        family_name_kana: 苗字(フリガナ)
+        first_name_kana: 名前(フリガナ)
+        postalcode: 郵便番号
+        prefecture: 都道府県
+        city: 市町村
+        address: 番地
