@@ -161,13 +161,6 @@
   font-size: 15px;
 }
 
-#file_fields {
-  // @include images-text-box_height;
-  // width: 100%;
-  // cursor: pointer;
-  // position: absolute;
-  // left: 0;
-}
 
 .image-select-box {
   position: relative;
@@ -176,14 +169,6 @@
   cursor: pointer;
   position: absolute;
   left: 0;
-  // &__hidden {
-  //   @include images-text-box_height;
-  //   width: 100%;
-  //   cursor: pointer;
-  //   position: absolute;
-  //   left: 0;
-
-  // }
   &__visible {
     @include images-text-box_height;
     cursor: pointer;
