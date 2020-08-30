@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :password, presence: true, length: { minimum: 7, maximum: 128 }
 
+
+  has_many :products
   has_one :address
   has_one :profile, :dependent => :destroy
 

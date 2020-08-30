@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'searches/index'
   root to: 'top#index'
   resources :top, only: [:index, :new]
-  resources :products, only: [:index, :new, :show]
+  resources :products, only: [:index, :new, :create, :edit, :show]
   resources :users, only: [:index, :show]
+  resources :images, only: [:new, :create] 
 end

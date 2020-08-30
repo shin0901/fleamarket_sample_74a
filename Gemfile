@@ -47,7 +47,10 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   gem 'factory_bot_rails'
+  gem 'faker'
+
 end
 
 group :development do
@@ -75,6 +78,8 @@ group :production do
 end
 
 gem 'carrierwave'
+gem 'rmagick'
+
 gem 'fog-aws'
 
 gem 'haml-rails'
@@ -82,6 +87,9 @@ gem 'font-awesome-sass'
 gem 'kaminari'
 gem 'ransack'
 gem 'devise'
+gem 'active_hash'
+gem 'jquery-rails'
+# gem 'jquery-turbolinks'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'devise-i18n-views'

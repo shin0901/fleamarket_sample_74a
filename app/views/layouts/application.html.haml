@@ -6,9 +6,14 @@
     %title 人生を変えるフリマアプリ
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
   %body
+  
+    -# 商品出品完了時のnotice
+    .notifications
+      - flash.each do |key, value|
+        = content_tag(:div, value, class: key)
 
     -# %p.notice notice
     -# %p.alert alert

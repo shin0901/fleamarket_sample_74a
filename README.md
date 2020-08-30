@@ -61,17 +61,19 @@
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|productName|string|null: false, add_index: true|
+|name|string|null: false, add_index: true|
 |description|text|null: false|
 |price|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
-|category_id|references|null: false, foreign_key: true|
-|prefectur_id(active_hash)|reference|null: false, foreign_key: true|
-|size_id(active_hash)|references|foreign_key: true|
-|brand_id|references|foreign_key: true|
-|condition_id(active_hash)|references|null: false, foreign_key: true|
-|shipping_charge_id(active_hash)|references|null: false, foreign_key: true|
-|days_until_shipping_id(active_hash)|references|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
+|prefecture_id(active_hash)|integer|null: false, foreign_key: true|
+|size_id(active_hash)|integer|foreign_key: true|
+|brand_id(active_hash)|integer|foreign_key: true|
+|condition_id(active_hash)|integer|null: false, foreign_key: true|
+|shipping_charge_id(active_hash)|integer|null: false, foreign_key: true|
+|days_until_shipping_id(active_hash)|integer|null: false, foreign_key: true|
+|status(enum)|integer|null: false|
+|buyer_id|integer||
 
 ### Association
 - belongs_to :user
