@@ -9,6 +9,11 @@ class ProductsController < ApplicationController
   
   def show
   end
+
+  def edit
+    @product = Product.find(params[:id])
+    @product.images.build
+  end
   
   def create
     @product = Product.new(product_params)
@@ -26,7 +31,7 @@ class ProductsController < ApplicationController
   # カテゴリ機能実装後に.merge(category_id: 1)の部分は修正
   def product_params
     params.require(:product).permit(:name, :description, :price, :condition_id, :size_id, 
-    :prefecture_id, :days_until_shipping_id, :shipping_charge_id, :brand_id, :image, images_attributes: [:image])
+    :prefecture_id, :days_until_shipping_id, :shipping_charge_id, :brand_id, images_attributes:[:image, :_destroy, :id])
     .merge(user_id: current_user.id)
     .merge(category_id: 1)
   end

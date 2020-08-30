@@ -35,10 +35,20 @@
       color: $text-color;
     }
     &__drag-drop-box{
-      .product_image{
+      .item-image{
         height: 100px;
         width: 20%;
         float: left;
+        &__content{
+          height: 100px;
+          width: 20%;
+          float: left;
+          &--icon{
+            height: 100px;
+            width: 20%;
+            float: left;
+          }
+        }
       }
     }
   }
@@ -151,16 +161,29 @@
   font-size: 15px;
 }
 
+#file_fields {
+  // @include images-text-box_height;
+  // width: 100%;
+  // cursor: pointer;
+  // position: absolute;
+  // left: 0;
+}
+
 .image-select-box {
   position: relative;
-  &__hidden {
-    @include images-text-box_height;
-    width: 100%;
-    cursor: pointer;
-    position: absolute;
-    left: 0;
+  @include images-text-box_height;
+  width: 100%;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  // &__hidden {
+  //   @include images-text-box_height;
+  //   width: 100%;
+  //   cursor: pointer;
+  //   position: absolute;
+  //   left: 0;
 
-  }
+  // }
   &__visible {
     @include images-text-box_height;
     cursor: pointer;
