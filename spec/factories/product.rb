@@ -12,6 +12,9 @@ FactoryBot.define do
     shipping_charge
     prefecture
     size
+    images {[
+     FactoryBot.build(:image, product: nil)
+    ]}
   end
 
 end

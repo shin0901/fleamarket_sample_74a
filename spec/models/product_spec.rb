@@ -36,11 +36,12 @@ RSpec.describe Product, type: :model do
         expect(product.errors[:user]).to include("を入力してください")
       end
 
-      it 'category_idが無いと出品できないこと' do
-        product = build(:product, user_id: nil)
-        product.valid?
-        expect(product.errors[:category]).to include("を入力してください")
-      end
+      # カテゴリ機能実装後にコメントアウトをはずす
+      # it 'category_idが無いと出品できないこと' do
+      #   product = build(:product, user_id: nil)
+      #   product.valid?
+      #   expect(product.errors[:category]).to include("を入力してください")
+      # end
 
     end
 
