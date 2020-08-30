@@ -1,33 +1,3 @@
-// $(function(){
-//   $('#image_image').change(function(e){
-//     //ファイルオブジェクトを取得する
-//     var file = e.target.files[0];
-//     // 選択されたファイルを配列形式で取得
-//     var reader = new FileReader();
-//     //画像でない場合は処理終了
-//     if(file.type.indexOf("image") > 2){
-//       alert("10枚以下の画像添付になります");
-//       return false;
-//     }
-//     //アップロードした画像を設定する
-//     reader.onload = (function(file){
-//       return function(){
-//         blobUrl = URL.createObjectURL(file);
-//         let html = `
-//                     <img src="${blobUrl}" class="product_image">
-//                    `;
-//         $('.sell__container__images__drag-drop-box').after(html);
-//       };
-//     })(file);
-//     reader.readAsDataURL(file);
-//   });
-// });
-
-// $(fu
-
-
-
-
 // ここからカリキュラムに沿った記述
 $(document).on('turbolinks:load', ()=> {
   // 画像用のinputを生成する関数
