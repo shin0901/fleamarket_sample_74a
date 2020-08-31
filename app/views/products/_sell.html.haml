@@ -54,9 +54,8 @@
               カテゴリー
             .label__required
               必須
-          = f.collection_select( :category_id, Category.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
-          = f.collection_select( :category_id, Category.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
-          = f.collection_select( :category_id, Category.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
+          = f.collection_select :category_id, @category_parent_array, :id, :name,{include_blank: "選択してください"}, class: "select_field, select-box"
+
         .sell__container__details__size
           .label
             .label__content

@@ -1,7 +1,5 @@
 class Category < ApplicationRecord
-  def change
-    add_column :categories, :name, :text
-  end
+  has_many :products
   has_ancestry
 end
 
