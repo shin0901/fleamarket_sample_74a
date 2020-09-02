@@ -1,0 +1,13 @@
+.breadcrumb-list
+  .breadcrumb-list__text
+    .breadcrumb-list__text__home
+      = link_to "FURIMA", root_path, class: "breadcrumb-list__text__home__link"
+      %i.fas.fa-angle-right
+    .breadcrumb-list__text__category--main
+      = link_to "#{@category_parent.name}", root_path, class: "breadcrumb-list__text__category__link--home"
+      %i.fas.fa-angle-right
+    .breadcrumb-list__text__category--sub
+      = link_to "#{@category_child.name}", root_path, class: "breadcrumb-list__text__category__link--sub"
+      %i.fas.fa-angle-right
+    .breadcrumb-list__text__category--sub_sub
+      = link_to "#{@category_grandchild.name}", root_path, class: "breadcrumb-list__text__category__link--subsub"

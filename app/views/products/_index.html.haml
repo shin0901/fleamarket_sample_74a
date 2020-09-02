@@ -1,0 +1,25 @@
+- @products.each do |product|
+  .item_card 
+    = link_to product_path(product.id), class: 'item_card__link' do
+      .item_card__image_field
+        = image_tag product.images[0].image.url, class: 'item_card__image_field__image'
+      .item_card__info
+        %h3.item_card__info__name
+          = product.name
+        .item_card__info__detail
+          %ul
+            %li.item_card__info__detail____price_field
+              %span ¥
+              = product.price
+            %li 
+              %i.fa.fa-star.lileicon
+              0
+          %p.item_card__info__detail__price_field--tax (税込)
+
+
+
+
+
+
+
+
