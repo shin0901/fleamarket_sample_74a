@@ -8,31 +8,11 @@
         = @product.name
       .show__container__item-info__detail
         .show__container__item-info__detail__images
-          -# 以下の記述で1枚目の画像は表示できる
-          = image_tag @product.images[0].image.url, class: 'images_table__image'
-          = image_tag @product.images[1].image.url, class: 'images_table__image'
-
           .images_table
             %ul.images_table__box
-              - @product.images do |i|
-                %li= image_tag i.image.url, class: 'images_table__image'
-
-          -# フロント実装時にサンプル画像を1枚づつ表示させていたコード
-            -#   = image_tag 'material/pict/show9.jpg', class: 'images_table__image'
-            -# %li.images_table__box
-            -#   = image_tag 'material/pict/show4.jpg', class: 'images_table__image'
-            -# %li.images_table__box
-            -#   = image_tag 'material/pict/show8.jpg', class: 'images_table__image'
-            -# %li.images_table__box
-            -#   = image_tag 'material/pict/show9.jpg', class: 'images_table__image'
-            -# %li.images_table__box
-            -#   = image_tag 'material/pict/show4.jpg', class: 'images_table__image'
-            -# %li.images_table__box
-            -#   = image_tag 'material/pict/show8.jpg', class: 'images_table__image'
-            -# %li.images_table__box
-            -#   = image_tag 'material/pict/show9.jpg', class: 'images_table__image'
-            -# %li.images_table__box
-            -#   = image_tag 'material/pict/show4.jpg', class: 'images_table__image'
+              - @product.images.each do |i|
+                %li.images_table__box--list
+                  = image_tag i.image.url, class:'images_table__image'
 
       .show__container__item-info__price-info
         .show__container__item-info__price-info__price
@@ -54,7 +34,7 @@
           
       .show__container__item-info__description
         = simple_format @product.description
-      .show__container__item-info__detail__table
+      .show__container__item-info__detail
         %table.detail-table
           %tr
             %td.detail-table__title 出品者 
@@ -71,7 +51,10 @@
           %tr
             %td.detail-table__title ブランド
             %td.detail-table__content 
-              = link_to "#{@product.brand.name}", "#", class: "table-link"
+              - if @product.brand != nil
+                = link_to "#{@product.brand.name}", "#", class: "table-link"
+              - else
+                %p ー
           %tr
             %td.detail-table__title 商品のサイズ
             %td.detail-table__content
