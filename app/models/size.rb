@@ -1,11 +1,12 @@
 class Size < ActiveHash::Base
   self.data = [
-    { id: 1, name: "XS" },
-    { id: 2, name: "S" },
-    { id: 3, name: "M" },
-    { id: 4, name: "L" },
-    { id: 5, name: "XL" },
-    { id: 6, name: "FREE SIZE" }
+    { id: 1, name: "サイズなし商品" },
+    { id: 2, name: "XS" },
+    { id: 3, name: "S" },
+    { id: 4, name: "M" },
+    { id: 5, name: "L" },
+    { id: 6, name: "XL" },
+    { id: 7, name: "FREE SIZE" }
   ]
   include ActiveHash::Associations
   has_many :products
