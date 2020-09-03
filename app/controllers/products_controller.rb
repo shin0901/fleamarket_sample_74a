@@ -27,6 +27,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def  done
+    @product_buyer= Product.find(params[:id])
+    @product_buyer.update( buyer_id: current_user.id)
+  end
+
   private
   # カテゴリ機能実装後に.merge(category_id: 1)の部分は修正
   def product_params
