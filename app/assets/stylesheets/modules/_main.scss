@@ -205,15 +205,14 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
         }
       }
       &__lists{
-        width: 75%;
+        width: 780px;
         margin: 26px auto;
+        display: flex;
         justify-content: space-around;
-        overflow-x: scroll;
-        white-space: nowrap;
         .product__list{
           width: 220px;
           display: inline-block;
-          margin-left: auto;
+          float: left;
           .product__list--img{
             width: 220px;
             height: 150px;
@@ -316,7 +315,7 @@ img{
   bottom: 0;
   width: 100%;
   z-index: auto;
-  height: 200px;
+  height: 150px;
   object-fit: cover;
 }
 
@@ -345,24 +344,4 @@ ul li{
 
 .main__pickupContainer:last-child{
   padding-bottom: 80px;
-}
-
-
-.product-box_photo__sold{
-  width: 0;
-  height: 0;
-  border-top: 70px solid #ea352d ;
-  border-right: 70px solid transparent;
-  border-bottom: 60px solid transparent;
-  border-left: 60px solid #ea352d ;
-  z-index:100;
-  position: absolute;
-  &__inner{
-    transform: rotate(-45deg);
-    font-size: 28px;
-    margin:-35px 0px 0px -55px;
-    color: #fff;
-    letter-spacing: 2px;
-    font-weight: 600;
-  }
 }
