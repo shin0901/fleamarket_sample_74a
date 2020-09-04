@@ -30,7 +30,7 @@
             .sellerBtn__edit
               = button_to '商品の編集', {controller: 'products', action: 'edit'}, {method: :get, class:'sellerBtn__edit__btn'}
             .sellerBtn__destroy
-              = button_to 'この商品を削除する', {controller: 'products', action: 'destroy'}, {method: :get, class:'sellerBtn__destroy__btn'}
+              = button_to 'この商品を削除する', {controller: 'products', action: 'destroy'}, {method: :delete, data: {confirm: "この商品を削除しますか？"}, class:'sellerBtn__destroy__btn'}
           
       .show__container__item-info__description
         = simple_format @product.description
