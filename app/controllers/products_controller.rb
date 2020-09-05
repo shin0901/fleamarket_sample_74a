@@ -20,12 +20,11 @@ class ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id])
-    @product.destroy
     respond_to do |format|
       if @product.destroy
         format.html{redirect_to root_path, notice:'商品を削除しました'}
       else
-        format.html{render action: 'edit', notice:'商品を削除に失敗しました'}
+        format.html{render action: 'edit', notice:'商品の削除に失敗しました'}
       end
     end
   end
