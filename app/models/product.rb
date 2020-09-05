@@ -24,6 +24,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :brand
 
   validates :condition, presence: true
+  validates :size, presence: true
   validates :days_until_shipping, presence: true
   validates :shipping_charge, presence: true
   validates :prefecture, presence: true

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root to: 'top#index'
   resources :top, only: [:index, :new]
 
-  resources :products, only: [:index, :new, :create, :edit, :show] do
+  resources :products, only: [:index, :new, :create, :edit, :show, :destroy] do
     collection do
       get 'get_category_children', defaults: { fomat: 'json'}
       get 'get_category_grandchildren', defaults: { fomat: 'json'}

@@ -88,10 +88,7 @@
         width: 100%;
         background-color: #f3f3f3;
         cursor: pointer;
-      }
-      &__table {
-        width: 100%;
-        margin-bottom: 20px;
+        display: flex;
       }
     }
     &__price-info {
@@ -301,6 +298,43 @@
   margin: 0 auto;
 }
 
+.sellerBtn {
+  display: flex;
+  width: 620px;
+  &__edit {
+    width: 50%;
+    &__btn {
+      height: 60px;
+      width: 90%;
+      font-size: 23px;
+      font-weight: bold;
+      color: $container-color;
+      background-color: #ffa500;
+      border-style: none;
+      cursor: pointer;
+      border-radius: 30px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  &__destroy {
+    width: 50%;
+    &__btn {
+      height: 60px;
+      width: 90%;
+      font-size: 23px;
+      font-weight: bold;
+      color: $container-color;
+      background-color: darkgray;
+      border-style: none;
+      cursor: pointer;
+      border-radius: 30px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
 .comment-form {
   height: 100px;
   width: 100%;
@@ -329,28 +363,28 @@
   font-size: 0;
   text-align: center;
   &__1 {
-    height: 300px;
+    height: 100px;
     object-fit: contain;
   }
 }
 .images_table {
   font-size: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   text-align: center;
   &__box {
-    width: 60px;
-    height: 60px;
-  }
-  &__image {
-    opacity: 0.6;
-    width:100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  &__image:hover {
-    opacity: 1;
+    width: 620px;
+    display: flex;
+    flex-wrap: wrap;
+    &--list {
+      opacity: 0.8;
+      width: 33%;
+      height: 100%;
+      .productImage {
+        object-fit: contain;
+      }
+    }
+    &--list:hover {
+      opacity: 1;
+    }
   }
 }
 
