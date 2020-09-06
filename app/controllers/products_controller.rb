@@ -12,7 +12,13 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @product.images.build
+    # @product.images.build
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @product.update(product_params)
+    redirect_to root_path
   end
   
   def create
@@ -27,11 +33,15 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product.destroy
+  end
+
   private
   # カテゴリ機能実装後に.merge(category_id: 1)の部分は修正
   def product_params
     params.require(:product).permit(:name, :description, :price, :condition_id, :size_id, 
-    :prefecture_id, :days_until_shipping_id, :shipping_charge_id, :brand_id, :images, images_attributes:[:image])
+    :prefecture_id, :days_until_shipping_id, :shipping_charge_id, :brand_id, images_attributes: [:image, :id, :_destroy])
     .merge(user_id: current_user.id)
     .merge(category_id: 1)
   end

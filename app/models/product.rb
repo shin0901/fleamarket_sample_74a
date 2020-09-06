@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   validates :price, presence: true
   
   has_many :images, dependent: :destroy
-  accepts_nested_attributes_for :images, allow_destroy: true
+  accepts_nested_attributes_for :images, allow_destroy: true, update_only: true
   validates_associated :images
   validates :images, presence: true
   

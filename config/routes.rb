@@ -10,10 +10,11 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
 
+  patch 'products/edit'
   get 'searches/index'
   root to: 'top#index'
   resources :top, only: [:index, :new]
-  resources :products, only: [:index, :new, :create, :edit, :show]
+  resources :products, only: [:index, :new, :create, :edit, :show, :update, :destroy]
   resources :users, only: [:index, :show]
   resources :images, only: [:new, :create] 
 end

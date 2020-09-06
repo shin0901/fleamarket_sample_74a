@@ -1,3 +1,5 @@
 {
-  "editor.fontSize": 13
+  "editor.fontSize": 19,
+  "editor.tabSize": 10,
+  "editor.accessibilityPageSize": 11
 }

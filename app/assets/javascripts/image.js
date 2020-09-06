@@ -24,7 +24,7 @@ $(function(){
                 </div>
               </div>`
     //image_box__container要素の前にhtmlを差し込む
-    $('.sell_container_images__drag-drop-box').before(html);
+    $('.sell__container__images__drag-drop-box').before(html);
     const dataIndex = $(this).parent().data('index');
     const newFileField = buildFileField(dataIndex + 1);
     $(' #file_fields').append(newFileField);
