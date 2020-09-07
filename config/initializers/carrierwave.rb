@@ -12,8 +12,8 @@ CarrierWave.configure do |config|
       aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],
       region: 'your_region' 
     }
-    config.fog_directory  = 'chatspace0901' 
-    config.asset_host = 'https://s3-your_region.amazonaws.com/chatspace0901'
+    config.fog_directory  = 'fleamarket74a' 
+    config.asset_host = 'https://s3-your_region.amazonaws.com/fleamarket74a'
   else
     config.storage :file 
     config.enable_processing = false if Rails.env.test? 
