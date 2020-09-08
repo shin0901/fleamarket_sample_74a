@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
+  before_action :set_product, only: [:show, :purchase, :pay]
 
   def get_category_children
     @category_children = Category.find("#{params[:parent_id]}").children
@@ -19,6 +20,11 @@ class ProductsController < ApplicationController
   end
   
   def show
+    @product = Product.find(params[:id])
+    @category_id = @product.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
   end
 
   def edit
@@ -38,6 +44,19 @@ class ProductsController < ApplicationController
     end
   end
 
+  def purchase
+  end
+
+  def pay
+    @product = Product.find(params[:id])
+    Payjp.api_key = ENV['PAYJP_PUBLIC_KEY']
+    Payjp::Charge.create(
+      amount: @product.price,
+      card: params['payjp-token'],
+      currency: 'jpy'
+    )
+  end
+
   def  done
     @product_buyer= Product.find(params[:id])
     @product_buyer.update( buyer_id: current_user.id)
@@ -54,6 +73,10 @@ class ProductsController < ApplicationController
   
   def set_category
     @category_parent_array = Category.where(ancestry: nil)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 
 end

@@ -1,2 +1,27 @@
 class Credit < ApplicationRecord
+  belongs_to :product
+  belongs_to :user
+
+  require 'payjp'
+  Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+
+  def self.create_credit_to_payjp(params)
+    # トークンを作成
+    token = Payjp::Token.create({
+      card: {
+        number:    params['number'],
+        cvc:       params['cvc'],
+        exp_month: params['valid_month'],
+        exp_year:  params['valid_year']
+      }},
+      {'X-Payjp-Direct-Token-Generate': 'true'}
+      )
+      # 上記で作成したトークンをもとに顧客情報を作成
+      Payjp::Customer.create(card: token.id)
+  end
+
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :purchase_amount, presence: true, numericality: { only_integer: true, greater_than: 0 }
+
 end

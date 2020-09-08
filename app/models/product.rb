@@ -1,5 +1,8 @@
 class Product < ApplicationRecord
 
+  has_many :credit
+  validates :price, presence: true
+
   enum status: { published: 0, sold_out: 1}
    
   validates :name, presence: true, length: {maximum:40}

@@ -196,18 +196,18 @@ $text-color: #222222;
       margin-bottom: 24px;
       font-size: 14px;
     }
-    &__btn{
-      background-color: #ccc;
-      color: #888;
-      cursor: pointer;
-      width: 100%;
-      font-size: 17px;
-      min-height: 48px;
-      padding: 0 24px;
-      border-radius: 4px;
-      border: 1px solid transparent;
-      font-weight: 600;
-    }
+    // &__btn{
+    //   background-color: #ccc;
+    //   color: #888;
+    //   cursor: pointer;
+    //   width: 100%;
+    //   font-size: 17px;
+    //   min-height: 48px;
+    //   padding: 0 24px;
+    //   border-radius: 4px;
+    //   border: 1px solid transparent;
+    //   font-weight: 600;
+    // }
   }
 }
 
@@ -371,4 +371,30 @@ $text-color: #222222;
   font-size: 13px;
   font-weight: bold;
   color: #888888;
+}
+
+.payjp-button__able{
+  background-color: #00eeff;
+  color:#ffffff;
+  cursor: pointer;
+  width: 100%;
+  font-size: 17px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  font-weight: 600;
+}
+
+.payjp-button__discble{
+  background-color: #00eeff;
+  color:#ffffff;
+  cursor: pointer;
+  width: 100%;
+  font-size: 17px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  font-weight: 600;
 }

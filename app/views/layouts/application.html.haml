@@ -2,8 +2,8 @@
 %html
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
-
     %title 人生を変えるフリマアプリ
+    %script{src: "https://js.pay.jp/v1/", type: "text/javascript"}
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all'
@@ -14,9 +14,6 @@
     .notifications
       - flash.each do |key, value|
         = content_tag(:div, value, class: key)
-
-    -# %p.notice notice
-    -# %p.alert alert
 
     = yield
 
