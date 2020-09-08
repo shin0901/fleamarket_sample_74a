@@ -3,7 +3,6 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
-  if Rails.env.production? 
     config.storage = :fog
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
@@ -13,9 +12,5 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1' 
     }
     config.fog_directory  = 'fleamarket74a' 
-    config.asset_host = 'https://s3-your_region.amazonaws.com/fleamarket74a'
-  else
-    config.storage :file 
-    config.enable_processing = false if Rails.env.test? 
-  end  
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/fleamarket74a'
 end
