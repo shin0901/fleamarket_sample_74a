@@ -19,9 +19,9 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
+    product = Product.find(params[:id])
     respond_to do |format|
-      if @product.destroy
+      if product.destroy
         format.html{redirect_to root_path, notice:'商品を削除しました'}
       else
         format.html{render action: 'edit', notice:'商品の削除に失敗しました'}
@@ -40,6 +40,10 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     @product.images.build
+    @category_id = @product.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
   end
   
   def create
@@ -58,6 +62,12 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.update(product_params)
     redirect_to root_path
+  end
+
+  def update
+    product = Product.find(params[:id])
+    product.update(product_params)
+
   end
 
   private

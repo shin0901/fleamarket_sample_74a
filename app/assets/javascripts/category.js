@@ -9,21 +9,20 @@ $(function(){
   function appendChildrenBox(insertHTML){
     var childSelectHtml = "";
     childSelectHtml = `<div class="category__child" id="children_wrapper">
-                        <select id="child__category" name="product[category_id]" class="select_field, select-box">
-                          <option value="">---</option>
+                        <select id="child__category" name="product[category_id]" class="select-box">
+                          <option value="">選択してください</option>
                           ${insertHTML}
                          </select>
                         </div>`;
     // ブラウザに非同期で子セレクトボックスを表示させる
-    console.log(childSelectHtml)
     $('.sell__container__details__category').append(childSelectHtml);
   }
   // 孫カテゴリーをプルダウンで表示させる変数を定義
   function appendGrandchildrenBox(insertHTML){
     var grandchildSelectHtml = "";
     grandchildSelectHtml = `<div class="category__child" id="grandchildren_wrapper">
-                              <select id="grandchild__category" name="product[category_id]" class="select_field, select-box">
-                                <option value="">---</option>
+                              <select id="grandchild__category" name="product[category_id]" class="select-box">
+                                <option value="">選択してください</option>
                                 ${insertHTML}
                                 </select>
                             </div>`;
@@ -89,5 +88,9 @@ $(function(){
       $('#grandchildren_wrapper').remove();
     }
   })
-
-})
+  // 商品編集時に親カテゴリが再選択されると子カテゴリ以下が消える
+  $('.edit-parent').on('change',function(){
+    $('.edit-child').remove();
+    $('.edit-grandchild').remove();
+  })
+});

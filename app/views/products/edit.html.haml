@@ -1,3 +1,141 @@
 = render "header"
-= render "sell", product: @product
+
+.sell__wrapper
+  .sell__container
+    = form_with model: @product, local: true do |f|
+      - if @product.errors.any?
+        .product__sell__errors
+          %h2= "#{product.errors.full_messages.count}件のエラーが発生しました。"
+          %ul
+            - product.errors.full_messages.each do |message|
+              %li= message
+      .sell__container__images
+        .sell__container__images__titles
+          .label
+            .label__content
+              出品画像
+            .label__required
+              必須
+          %p 最大10枚までアップロードできます
+        #image-box.sell_container_images__drag-drop-box
+          #file_fields
+            = f.fields_for :images do |i|
+              .js-file_group{data: {index: i.index}}
+                = i.file_field :image, class: 'js-file'
+            .image-select-box__visible
+              = image_tag 'material/icon/icon_camera.png', height: '20px', class: 'camera-logo'
+              %p クリックしてファイルをアップロード 
+    
+      .sell__container__description
+        .sell__container__description__name
+          .label
+            .label__content
+              商品名
+            .label__required
+              必須
+          = f.text_field :name, {placeholder: "40文字まで", class: "input-box"}
+        .sell__container__description__text
+          .label
+            .label__content
+              商品の説明
+            .label__required
+              必須
+          = f.text_area :description, {placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "text-box"}
+          .text-counter
+            %span.show-counter
+              0
+            \/1000
+        
+      
+      .sell__container__details
+        .caption
+          商品の詳細
+        .sell__container__details__category
+          .label
+            .label__content
+              カテゴリー
+            .label__required
+              必須
+          // 商品編集時の設定
+          = f.collection_select :category_id, @category_parent_array, :id, :name,{selected: @category_parent.id}, class: "select-box, edit-parent"
+          = f.collection_select :category_id, Category.where(ancestry: "#{@category_parent.id}"), :id, :name,{selected: @category_child.id}, class: "select-box, edit-child"
+          = f.collection_select :category_id, Category.where(ancestry: "#{@category_parent.id}/#{@category_child.id}"), :id, :name,{selected: @category_grandchild.id}, class: "select-box, edit-grandchild"
+
+        .sell__container__details__size
+          .label
+            .label__content
+              サイズ
+            .label__required
+              必須
+          = f.collection_select( :size_id, Size.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
+        .sell__container__details__brand
+          .label
+            .label__content
+              ブランド
+            .label__required.label__required--not
+              任意
+          = f.collection_select( :brand_id, Brand.all, :id, :name,{include_blank: ""}, { class: "select-box"} )
+        .sell__container__details__condition
+          .label
+            .label__content
+              商品の状態
+            .label__required
+              必須
+          = f.collection_select( :condition_id, Condition.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
+      .sell__container__shipping
+        .caption
+          配送について
+        .sell__container__shipping__charge
+          .label
+            .label__content
+              配送料の負担
+            .label__required
+              必須
+          = f.collection_select( :shipping_charge_id, ShippingCharge.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
+        .sell__container__shipping__origin
+          .label
+            .label__content
+              発送元の地域
+            .label__required
+              必須
+          = f.collection_select( :prefecture_id, Prefecture.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
+        .sell__container__shipping__days
+          .label
+            .label__content
+              発送までの日数
+            .label__required
+              必須
+          = f.collection_select( :days_until_shipping_id, DaysUntilShipping.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
+      .sell__container__price
+        .caption
+          価格（¥300〜9,999,999）
+        .sell__container__price__selling-price
+          .label
+            .label__content
+              販売価格
+            .label__required
+              必須
+          .price-box
+            ¥
+            = f.number_field :price, { placeholder: "0", class: "price-box__input", min: 300, max: 9999999 }
+        .sell__container__price__commition
+          .sell__container__price__commition--left
+            %p 販売手数料（10%）
+          .sell__container__price__commition--right
+            %p#commition_field ー
+        .sell__container__price__profit
+          .sell__container__price__profit--left
+            %p 販売利益
+          .sell__container__price__profit--right
+            %p#profit_field ー
+      .sell__container__btn
+        .sell__container__btn__sell
+          = f.submit "出品する", class: "sell-btn"
+        -# .sell__container__btn__save
+        -#   %button.save-btn
+        -#     下書きに保存
+        .sell__container__btn__return
+          %a.back-link(href = "javascript:history.back()")
+            もどる
+
 = render "footer"
