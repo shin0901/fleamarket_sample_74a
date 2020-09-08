@@ -53,12 +53,18 @@ class ProductsController < ApplicationController
       end
     end
   end
+  
+  def update
+    @product = Product.find(params[:id])
+    @product.update(product_params)
+    redirect_to root_path
+  end
 
   private
 
   def product_params
     params.require(:product).permit(:name, :description, :price, :condition_id, :size_id, :category_id,
-    :prefecture_id, :days_until_shipping_id, :shipping_charge_id, :brand_id, :images, images_attributes:[:image])
+    :prefecture_id, :days_until_shipping_id, :shipping_charge_id, :brand_id, images_attributes:[:image, :id, :_destroy])
     .merge(user_id: current_user.id)
   end
 
