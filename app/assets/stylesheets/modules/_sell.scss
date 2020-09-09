@@ -183,17 +183,14 @@
 .js-file {
   display: none;
 }
-.item-image__operetion {
-  &--delete {
-    color: #87cefa;
-    cursor: pointer;
-    border-style: none;
-    background-color: $container-color;
-  }
-  &--delete:hover {
-    text-decoration: underline;
-
-  }
+.js-remove {
+  color: #87cefa;
+  cursor: pointer;
+  border-style: none;
+  background-color: $container-color;
+}
+.js-remove:hover {
+  text-decoration: underline;
 }
 
 .select-box {
@@ -307,4 +304,8 @@ nav ul li a{
   padding: 10px;
   margin: 7px 0;
   cursor: pointer;
+}
+
+.images__list {
+  list-style: none;
 }

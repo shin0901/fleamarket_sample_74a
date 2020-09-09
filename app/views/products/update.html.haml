@@ -1,6 +1,10 @@
 = render 'top/header'
 
 .show__wrapper
-  更新が完了しました
-  .linkToToppage
-    = link_to 'トップページへ戻る', root_path
+  .show__wrapper__update
+    .show__wrapper__update__notice
+      更新が完了しました
+    .show__wrapper__update__linkToToppage
+      = link_to 'トップページへもどる', root_path, class: 'table-link'
+
+= render "footer"

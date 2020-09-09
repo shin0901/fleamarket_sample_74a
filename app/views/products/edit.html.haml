@@ -17,14 +17,30 @@
             .label__required
               必須
           %p 最大10枚までアップロードできます
+
         #image-box.sell_container_images__drag-drop-box
-          #file_fields
-            = f.fields_for :images do |i|
-              .js-file_group{data: {index: i.index}}
-                = i.file_field :image, class: 'js-file'
-            .image-select-box__visible
-              = image_tag 'material/icon/icon_camera.png', height: '20px', class: 'camera-logo'
-              %p クリックしてファイルをアップロード 
+          #previews
+            - if @product.persisted?
+              - @product.images.each_with_index do |image, i|
+                %li.images__list
+                  = image_tag image.image.url, data: { index: i }, width: "100", height: '100', class:'images__table__edit'
+                -# .js-delete-button
+                      
+          -# #file_fields
+          = f.fields_for :images do |i|
+            .js-file_group{data: {index: i.index}}
+              = i.file_field :image, class: 'js-file'
+              %span.js-remove 削除
+            - if @product.persisted?
+              = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
+          - if @product.persisted?
+            .js-file_group{data: {index:@product.images.count}}
+              = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][image]", class: 'js-file'
+              .js-remove 削除
+
+        .image-select-box__visible
+          = image_tag 'material/icon/icon_camera.png', height: '20px', class: 'camera-logo'
+          %p クリックしてファイルをアップロード 
     
       .sell__container__description
         .sell__container__description__name

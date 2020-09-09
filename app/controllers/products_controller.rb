@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @product.images.build
+    # @product.images.build
     @category_id = @product.category_id
     @category_parent = Category.find(@category_id).parent.parent
     @category_child = Category.find(@category_id).parent
@@ -61,13 +61,6 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.update(product_params)
-    redirect_to root_path
-  end
-
-  def update
-    product = Product.find(params[:id])
-    product.update(product_params)
-
   end
 
   private
