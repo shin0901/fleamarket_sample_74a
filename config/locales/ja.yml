@@ -19,7 +19,7 @@ ja:
         days_until_shipping: 発送までの日数
         price: 販売価格
         category: カテゴリー
-        images: 商品画像
+        images: 商品画像(1〜10枚)
       address:
         family_name: 苗字
         first_name: 名前
