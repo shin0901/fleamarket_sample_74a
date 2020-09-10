@@ -16,7 +16,7 @@
               必須
           %p 最大10枚までアップロードできます
         #image-box.sell__container__images__drag-drop-box
-          #file_fields
+          .file_fields
             = f.fields_for :images do |i|
               .js-file_group{data: {index: i.index}}
                 = i.file_field :image, class: 'js-file'

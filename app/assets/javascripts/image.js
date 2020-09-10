@@ -10,7 +10,7 @@ $(function(){
     return html;
   }
 
-  $('#file_fields').on('change', '.js-file', function(e){
+  $('.file_fields').on('change', '.js-file', function(e){
     const file = e.target.files[0];
     const src = window.URL.createObjectURL(file);
     var html= `<div class='item-image' data-image="${file.name}">
@@ -27,7 +27,8 @@ $(function(){
     $('.sell__container__images__drag-drop-box').before(html);
     const dataIndex = $(this).parent().data('index');
     const newFileField = buildFileField(dataIndex + 1);
-    $(' #file_fields').append(newFileField);
+    
+    $('.file_fields').append(newFileField);
   });
 
   $('.image-select-box__visible').on("click", function(){
@@ -35,11 +36,24 @@ $(function(){
     fileField.trigger('click');
   })
   
-  $(document).on("click", '.item-image__operetion--delete', function(){
-    //プレビュー要素を取得
-    var target_image = $(this).parent().parent()
+  $('#image-box').on("click", '.js-remove', function(){
+    // 投稿してる全ての画像の情報↓
+    let tabs = $(".images__table__edit").data('index');
+
+    //画像1枚に対するindexの数字↓
+    var target_image = $(this).parent().data('index')
+
+    // 該当indexを振られているチェックボックスを取得する
+    const hiddenCheck = $(`input[data-index="${target_image}"].hidden-destroy`);
+    // もしチェックボックスが存在すればチェックを入れる
+    if (hiddenCheck) hiddenCheck.prop('checked', true);
+    console.log(`img[data-index="${target_image}"]`);
+
     //プレビューを削除
-    target_image.remove();  
+    $(this).parent().remove();
+    $(`img[data-index="${target_image}"]`).remove();
+    // target_image.remove();  
+    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   })
 
 });

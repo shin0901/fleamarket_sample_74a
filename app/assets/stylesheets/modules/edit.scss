@@ -37,16 +37,27 @@
     &__drag-drop-box{
       .images__list{
         list-style: none;
+        text-align: center;
+        margin-bottom: 10px;
         .images__table__edit{
-          height: 340px;
+          // height: 340px;
+          width: 40%;
+          margin-left: 0 auto;
+          
         }
+      }
+      
+      .file_fields{
+        .hidden-destroy{
+          display: none;
+        }
+      }
         .button{
           .item-image__operetion--delete{
             height: 10px;
             width: 30px;
           }
         }
-      }
       &__content{
         height: 100px;
         width: 20%;
