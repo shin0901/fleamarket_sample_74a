@@ -3,9 +3,9 @@
     = form_with model: @product, local: true do |f|
       - if product.errors.any?
         .product__sell__errors
-          %h2= "#{product.errors.full_messages.count}件のエラーが発生しました。"
+          %h2= "#{@product.errors.full_messages.count}件のエラーが発生しました。"
           %ul
-            - product.errors.full_messages.each do |message|
+            - @product.errors.full_messages.each do |message|
               %li= message
       .sell__container__images
         .sell__container__images__titles
@@ -15,8 +15,8 @@
             .label__required
               必須
           %p 最大10枚までアップロードできます
-        #image-box.sell_container_images__drag-drop-box
-          #file_fields
+        #image-box.sell__container__images__drag-drop-box
+          .file_fields
             = f.fields_for :images do |i|
               .js-file_group{data: {index: i.index}}
                 = i.file_field :image, class: 'js-file'

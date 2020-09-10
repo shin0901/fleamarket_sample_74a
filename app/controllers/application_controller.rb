@@ -1,13 +1,16 @@
 class ApplicationController < ActionController::Base
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :basic_auth, if: :production?
-  before_action :authenticate_user!, except: [:index]
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_search
 
 
   def index
-
   end
+
+  def show
+  end
+
 
   private
 

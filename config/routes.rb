@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
 
+  patch 'products/edit'
   get 'searches/index'
   root to: 'top#index'
   resources :top, only: [:index, :new]

@@ -1,0 +1,318 @@
+
+* {
+  box-sizing: border-box;
+}
+.sell__wrapper {
+  background-color: $base-color;
+}
+
+.sell__header {
+  background-color: $base-color;
+  height: 130px;
+  position: relative;
+  &__logo {
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+}
+
+.sell__container {
+  background-color: $container-color;
+  width: 700px;
+  margin: 0 auto;
+  &__images {
+    @include border;
+    @include padding_container;
+    &__titles {
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: $text-color;
+    }
+    &__drag-drop-box{
+      .images__list{
+        list-style: none;
+        text-align: center;
+        margin-bottom: 10px;
+        .images__table__edit{
+          // height: 340px;
+          width: 40%;
+          margin-left: 0 auto;
+          
+        }
+      }
+      
+      .file_fields{
+        .hidden-destroy{
+          display: none;
+        }
+      }
+        .button{
+          .item-image__operetion--delete{
+            height: 10px;
+            width: 30px;
+          }
+        }
+      &__content{
+        height: 100px;
+        width: 20%;
+        float: left;
+        &--icon{
+          height: 100px;
+          width: 20%;
+          float: left;
+        }
+      }
+    }
+  }
+  &__description {
+    @include border;
+    @include padding_container;
+    width: 700px;
+  }
+  &__details {
+    @include border;
+    @include padding_container;
+  }
+  &__shipping {
+    @include border;
+    @include padding_container;
+  }
+  &__price {
+    @include padding_container;
+    font-size: 13px;
+    color: $text-color;
+    &__selling-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__commition {
+      @include border;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__profit {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+  }
+  &__btn {
+    padding: 0 35px 40px 35px;
+    text-align: center;
+    &__return {
+      margin: 20px 0;
+      font-size: 13px;
+    }
+  }
+}
+
+.sell__footer {
+  background-color: $base-color;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  .navbar{
+    text-align: center;
+  }
+  &__logo {
+    text-align: center;
+    margin-top: 30px;
+    &__image {
+      width: 200px;
+      height: 60px;
+    }
+    &__block {
+      &__str {
+        font-size: 17px;
+        text-decoration: none;
+        color: $container-color;
+      }
+    }
+  }
+}
+
+.label {
+  display: flex;
+  font-weight: bold;
+  font-size: 13px;
+  margin: 20px 0;
+  &__content {
+    color: #333333;
+  }
+  &__required {
+    margin-left: 7px;
+    color: $container-color;
+    font-size: 12px;
+    padding: 1px 3px;
+    border-radius: 2px;
+    background-color: $theme-color;
+    &--not {
+      background-color: $frame-color;
+    }
+  }
+}
+
+
+
+.input-box {
+  @include box_design;
+  @include input-box_height;
+  width: 100%;
+  padding: 10px;
+  margin: 7px 0;
+  font-size: 15px;
+}
+
+.text-box {
+  @include box_design;
+  @include images-text-box_height;
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+}
+
+
+.image-select-box {
+  position: relative;
+  @include images-text-box_height;
+  width: 100%;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  &__visible {
+    @include images-text-box_height;
+    cursor: pointer;
+    width: 100%;
+    line-height: 20px;
+    background-color: $base-color;
+    border: 1px dashed $frame-color;
+    font-size: 12px;
+    text-align: center;
+  }
+}
+.js-file {
+  display: none;
+}
+.item-image__operetion {
+  &--delete {
+    color: #87cefa;
+    cursor: pointer;
+    border-style: none;
+    background-color: $container-color;
+  }
+  &--delete:hover {
+    text-decoration: underline;
+
+  }
+}
+
+.select-box {
+  @include box_design;
+  @include input-box_height;
+  width: 100%;
+  padding: 10px;
+  margin: 7px 0;
+  cursor: pointer;
+}
+
+.sell-btn {
+  width: calc(100% - 270px);
+  height: 45px;
+  border-radius: 4px;
+  margin: 12px 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: $theme-color;
+  border-style: none;
+  color: $container-color;
+}
+.save-btn {
+  width: calc(100% - 270px);
+  height: 45px;
+  border-radius: 4px;
+  margin: 12px 0;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: $frame-color;
+  border-style: none;
+  color: $text-color;
+}
+
+.price-box {
+  display: flex;
+  align-items: center;
+  &__input {
+    @include box_design;
+    height: 45px;
+    width: 280px;
+    padding: 8px 30px;
+    margin: 7px 0 7px 7px;
+    font-size: 15px;
+    text-align: right;
+  }
+}
+
+.text-counter {
+  font-size: 10px;
+  color: #777777;
+  text-align: right;
+}
+.back-link {
+  text-decoration: none;
+  color: #87cefa
+}
+.back-link:hover {
+  text-decoration: underline;
+}
+.camera-logo {
+  width: 20px;
+  height: 18px;
+  margin-bottom: 5px;
+}
+.caption {
+  margin: 20px 0 ;
+  font-size: 13px;
+  font-weight: bold;
+  color: #888888;
+}
+
+.sell__footer li:first-child{
+  margin: 0;
+}
+
+.sell__footer ul{
+  font-size: 12px;
+}
+
+.sell__footer li{
+  display: inline-block;
+  margin: 30px 0 0 16px;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: #333
+}
+
+.product__sell__errors {
+  color: red;
+  text-align: center;
+}
+
+.notifications {
+  color: white;
+  text-align: center;  
+  .notice {
+    background-color: $theme-color;
+  }
+}

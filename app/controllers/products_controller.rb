@@ -18,6 +18,16 @@ class ProductsController < ApplicationController
     @product.images.build
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @product.update(product_params)
+    redirect_to root_path
+  end
+  
   def create
     @product = Product.new(product_params)
     respond_to do |format|
