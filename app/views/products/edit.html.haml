@@ -5,9 +5,9 @@
     = form_with model: @product, local: true do |f|
       - if @product.errors.any?
         .product__sell__errors
-          %h2= "#{product.errors.full_messages.count}件のエラーが発生しました。"
+          %h2= "#{@product.errors.full_messages.count}件のエラーが発生しました。"
           %ul
-            - product.errors.full_messages.each do |message|
+            - @product.errors.full_messages.each do |message|
               %li= message
       .sell__container__images
         .sell__container__images__titles

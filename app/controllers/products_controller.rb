@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
+  before_action :set_category, only: [:new, :edit, :create, :update, :destroy, :show]
 
   def get_category_children
     @category_children = Category.find("#{params[:parent_id]}").children
