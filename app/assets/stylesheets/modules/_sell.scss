@@ -298,3 +298,16 @@ nav ul li a{
     background-color: $theme-color;
   }
 }
+
+// 商品編集用のカテゴリセレクトボックス
+.edit-parent, .edit-child, .edit-grandchild {
+  @include box_design;
+  @include input-box_height;
+  width: 100%;
+  padding: 10px;
+  margin: 7px 0;
+  cursor: pointer;
+}
+.images__list {
+  list-style: none;
+}

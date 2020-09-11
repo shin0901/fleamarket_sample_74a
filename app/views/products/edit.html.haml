@@ -69,9 +69,11 @@
               カテゴリー
             .label__required
               必須
-          = f.collection_select( :category_id, Category.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
-          = f.collection_select( :category_id, Category.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
-          = f.collection_select( :category_id, Category.all, :id, :name,{include_blank: "選択してください"}, { class: "select-box"} )
+          // 商品編集時の設定
+          = f.collection_select :category_id, @category_parent_array, :id, :name,{selected: @category_parent.id}, class: "select-box, edit-parent"
+          = f.collection_select :category_id, Category.where(ancestry: "#{@category_parent.id}"), :id, :name,{selected: @category_child.id}, class: "select-box, edit-child"
+          = f.collection_select :category_id, Category.where(ancestry: "#{@category_parent.id}/#{@category_child.id}"), :id, :name,{selected: @category_grandchild.id}, class: "select-box, edit-grandchild"
+
         .sell__container__details__size
           .label
             .label__content
