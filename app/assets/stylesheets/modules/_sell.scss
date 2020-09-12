@@ -41,9 +41,6 @@
       margin-bottom: 10px;
       &__content{
         width:40%;
-        &--icon{
-          width:100%
-        }
       }
       &__delete {
         height: 30px;
@@ -299,22 +296,4 @@ nav ul li a{
   .notice {
     background-color: $theme-color;
   }
-}
-
-// 商品編集用のカテゴリセレクトボックス
-.edit-parent, .edit-child, .edit-grandchild {
-  @include box_design;
-  @include input-box_height;
-  width: 100%;
-  padding: 10px;
-  margin: 7px 0;
-  cursor: pointer;
-}
-
-.images__list {
-  list-style: none;
-}
-
-.sell__preview-image {
-  width: 100%;
 }
