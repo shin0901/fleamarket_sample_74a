@@ -14,5 +14,7 @@
 @import "sessions/new";
 @import "modules/create_address";
 @import "modules/edit";
-@import "modules/mypage";
-@import "modules/lookbuy";
+
+// 中北作マイページ&購入確認ページ実装
+@import "mypage";
+@import "lookbuy";
