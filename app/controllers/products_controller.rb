@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
 
-  before_action :set_category, only: [:new, :edit, :create, :update, :destroy, :show]
+  before_action :set_category, only: [:show, :new, :create, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
+   
 
   def get_category_children
     @category_children = Category.find("#{params[:parent_id]}").children
@@ -17,16 +19,6 @@ class ProductsController < ApplicationController
     @product = Product.new
     @product.images.build
   end
-
-  def edit
-    @product = Product.find(params[:id])
-  end
-
-  def update
-    @product = Product.find(params[:id])
-    @product.update(product_params)
-    redirect_to root_path
-  end
   
   def create
     @product = Product.new(product_params)
@@ -41,15 +33,12 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
-    @category_id = @product.category_id
     @category_parent = Category.find(@category_id).parent.parent
     @category_child = Category.find(@category_id).parent
     @category_grandchild = Category.find(@category_id)
   end
 
   def destroy
-    product = Product.find(params[:id])
     respond_to do |format|
       if product.destroy
         format.html{redirect_to root_path, notice:'商品を削除しました'}
@@ -60,7 +49,6 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
     @category_id = @product.category_id
     @category_parent = Category.find(@category_id).parent.parent
     @category_child = Category.find(@category_id).parent
@@ -68,7 +56,6 @@ class ProductsController < ApplicationController
   end
   
   def update
-    @product = Product.find(params[:id])
     @category_id = @product.category_id
     @category_parent = Category.find(@category_id).parent.parent
     @category_child = Category.find(@category_id).parent
@@ -92,6 +79,10 @@ class ProductsController < ApplicationController
   
   def set_category
     @category_parent_array = Category.where(ancestry: nil)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 
 end
