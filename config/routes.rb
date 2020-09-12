@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :credits
+  get 'creditcards/new'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions:      'users/sessions',
@@ -20,7 +20,18 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { fomat: 'json'}
     end
   end
-  
+
+  resources :creditcards, only: [:new, :create, :show, :destroy] do
+    collection do
+      get 'regist_done'            #登録済
+      get 'delete_done'            #削除済
+    end
+    member do
+      get 'buy'
+      post 'pay'
+    end
+  end
+
   resources :users, only: [:index, :show, :destroy]
   resources :images, only: [:index, :new, :create] 
 

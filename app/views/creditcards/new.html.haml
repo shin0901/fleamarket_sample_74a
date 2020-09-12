@@ -1,0 +1,41 @@
+= render "products/header"
+
+.wrapper
+  .credit-card__contaier
+    .credit-card__container__images
+      .credit-card__container__images__text
+        お支払い方法
+    .credit-card__container__images
+      .credit-card__container__images__box
+        =form_with model: @card, id: "all-form", url: creditcards_path, local: true do |f| 
+          .payment-text__box
+            .payment-text__contents
+              %label.credit カード番号
+              %span.required 必須
+            = f.text_field :card_number, placeholder: "半角数字のみ", class: 'card-number-form', maxlength: "16", id: "card_number"
+            %ul.card
+              %li=image_tag "image-visa.png", class: 'li-box'
+              %li=image_tag "image-mastercard.png", class: 'li-box'
+              %li=image_tag "image-JCB.png", class: 'li-box'
+              %li=image_tag "image-AMERICAN.png", class: 'li-box'
+              %li=image_tag "image-Diners.png", class: 'li-box'
+            .expiration__payment__date
+              %label.credit 有効期限
+              %span.required 必須
+            .expiration__payment__form
+              = f.select :exp_month, [["01", 1],["02", 2],["03", 3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]], id: "exp_month"
+              .exp-text 月
+              = f.select :exp_year, [["2020", 2020],["2021", 2021],["2022", 2022],["2023",2023],["2024",2024],["2025",2025],["2026",2026],["2027",2027],["2028",2028],["2029",2029],["2030",2030]], id: "exp_year"
+              .exp-text 年
+            .payment-text__contents
+              %label.credit セキュリティコード
+              %span.required 必須
+            = f.text_field :security_code, placeholder: "カード背面４桁または３桁の番号", class: 'payment-text-container', maxlength: "4", id: "security_code" 
+            .card
+              .card__token
+                =f.submit "登録する", class: "credit-card-submit-btn", id: "charge_form"
+              .sell__container__btn__return
+                %a.back-link(href = "javascript:history.back()")
+                  もどる
+
+= render "products/footer"
