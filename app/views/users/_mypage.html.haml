@@ -73,12 +73,13 @@
           .right__content__top--a
             .a__myphoto
             .a__name
-              User_name
+              = current_user.nickname
             .a__rank
               %h2.a__rank__level
                 評価 0
               %h2.a__rank__item
-                出品数 0
+                出品数
+                = current_user.products.count
         .right__content__tabs
           %ul.tab__top
             %li.tab__top__li.info
