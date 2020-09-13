@@ -31,7 +31,7 @@
               = button_to 'この商品を削除する', {controller: 'products', action: 'destroy'}, {method: :delete, data: {confirm: "この商品を削除しますか？"}, class:'sellerBtn__destroy__btn'}
         - else
           = button_to '購入画面に進む', {controller: 'products', action: 'index'}, {method: :get, class:'buy-btn'}
-          
+
       .show__container__item-info__description
         = simple_format @product.description
       .show__container__item-info__detail

@@ -34,21 +34,23 @@
       font-size: 13px;
       color: $text-color;
     }
-    &__drag-drop-box{
-      .item-image{
-        height: 100px;
-        width: 20%;
-        float: left;
-        &__content{
-          height: 100px;
-          width: 20%;
-          float: left;
-          &--icon{
-            height: 100px;
-            width: 20%;
-            float: left;
-          }
-        }
+    .item-image{
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin-bottom: 10px;
+      &__content{
+        width:40%;
+      }
+      &__delete {
+        height: 30px;
+        color: #87cefa;
+        cursor: pointer;
+        border-style: none;
+        background-color: $container-color;
+      }
+      &__delete:hover {
+        text-decoration: underline;
       }
     }
   }
@@ -183,17 +185,14 @@
 .js-file {
   display: none;
 }
-.item-image__operetion {
-  &--delete {
-    color: #87cefa;
-    cursor: pointer;
-    border-style: none;
-    background-color: $container-color;
-  }
-  &--delete:hover {
-    text-decoration: underline;
-
-  }
+.js-remove {
+  color: #87cefa;
+  cursor: pointer;
+  border-style: none;
+  background-color: $container-color;
+}
+.js-remove:hover {
+  text-decoration: underline;
 }
 
 .select-box {
@@ -296,5 +295,8 @@ nav ul li a{
   text-align: center;  
   .notice {
     background-color: $theme-color;
+  }
+  .alert {
+    background-color: orange;
   }
 }

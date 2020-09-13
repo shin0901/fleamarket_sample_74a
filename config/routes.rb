@@ -10,11 +10,12 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
 
+  patch 'products/edit'
   get 'searches/index'
   root to: 'top#index'
   resources :top, only: [:index, :new]
 
-  resources :products, only: [:index, :new, :create, :edit, :show, :destroy] do
+  resources :products, only: [:index, :new, :create, :edit, :show, :destroy, :update] do
     collection do
       get 'get_category_children', defaults: { fomat: 'json'}
       get 'get_category_grandchildren', defaults: { fomat: 'json'}

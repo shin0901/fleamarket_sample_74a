@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
 
-  before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
+  before_action :set_category, only: [:show, :new, :create, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :user_confirm, only: :edit
 
   def get_category_children
     @category_children = Category.find("#{params[:parent_id]}").children
@@ -17,30 +19,6 @@ class ProductsController < ApplicationController
     @product = Product.new
     @product.images.build
   end
-
-  def destroy
-    @product = Product.find(params[:id])
-    respond_to do |format|
-      if @product.destroy
-        format.html{redirect_to root_path, notice:'商品を削除しました'}
-      else
-        format.html{render action: 'edit', notice:'商品の削除に失敗しました'}
-      end
-    end
-  end
-  
-  def show
-    @product = Product.find(params[:id])
-    @category_id = @product.category_id
-    @category_parent = Category.find(@category_id).parent.parent
-    @category_child = Category.find(@category_id).parent
-    @category_grandchild = Category.find(@category_id)
-  end
-
-  def edit
-    @product = Product.find(params[:id])
-    @product.images.build
-  end
   
   def create
     @product = Product.new(product_params)
@@ -54,6 +32,44 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+    @category_id = @product.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
+  end
+
+  def destroy
+    respond_to do |format|
+      if product.destroy
+        format.html{redirect_to root_path, notice:'商品を削除しました'}
+      else
+        format.html{render action: 'edit', notice:'商品の削除に失敗しました'}
+      end
+    end
+  end
+
+  def edit
+    @category_id = @product.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
+  end
+  
+  def update
+    @category_id = @product.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
+    respond_to do |format|
+      if @product.update(product_params)
+        format.html{redirect_to root_path, notice:'商品情報を更新しました'}
+      else
+        format.html{render action: 'edit'}
+      end
+    end
+  end
+
   def  done
     @product_buyer= Product.find(params[:id])
     @product_buyer.update( buyer_id: current_user.id)
@@ -63,13 +79,21 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :description, :price, :condition_id, :size_id, :category_id,
-    :prefecture_id, :days_until_shipping_id, :shipping_charge_id, :brand_id, :images, images_attributes:[:image])
+    :prefecture_id, :days_until_shipping_id, :shipping_charge_id, :brand_id, images_attributes:[:image, :id, :_destroy])
     .merge(user_id: current_user.id)
   end
-
   
   def set_category
     @category_parent_array = Category.where(ancestry: nil)
   end
 
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  def user_confirm
+    unless current_user.id == @product.user_id?
+      redirect_to product_path, alert: "この商品を編集する権限がありません"
+    end
+  end
 end
