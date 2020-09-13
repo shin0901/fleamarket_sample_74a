@@ -19,7 +19,7 @@
             いいね一覧
             = icon('fas', 'angle-right')
           %li.mypage-list__ul__li
-            出品する
+            = link_to "出品する", new_product_path, class: "link_tag"
             = icon('fas', 'angle-right')
           %li.mypage-list__ul__li
             下書き
@@ -65,7 +65,7 @@
             電話番号の確認
             = icon('fas', 'angle-right')
           %li.setting-list__ul__li
-            = link_to "ログアウト", users_path
+            = link_to "ログアウト", users_path, class: "link_tag"
             = icon('fas', 'angle-right')
     .right
       .right__content
