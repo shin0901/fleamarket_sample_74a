@@ -13,6 +13,21 @@
       .mypage-list{
         &__ul {
           &__li {
+            width: 250px;
+            padding: 16px;
+            background: #fff;
+            font-size: 14px;
+            color: #333;
+            border-right: solid 1px #eeeeee;
+            border-bottom: solid 1px #eeeeee;
+            border-left: solid 1px #eeeeee;
+            font-weight: 500; 
+            display: flex;
+            justify-content: space-between;
+            border-style: none;
+          }
+          .mypage-list__click a{
+          display: block;
           width: 250px;
           padding: 16px;
           background: #fff;
@@ -24,6 +39,7 @@
           font-weight: 500; 
           display: flex;
           justify-content: space-between;
+
           }
         }
       }
@@ -177,4 +193,13 @@
       }
     }
   }
+}
+
+.link_tag {
+  color: #333;
+  text-decoration: none;
+}
+.link_tag:hover {
+  text-decoration: underline;
+  color: aqua;
 }
