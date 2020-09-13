@@ -6,6 +6,7 @@
     .breadcrumb-list__text__category--main
       = link_to "マイページ", "#", class: "breadcrumb-list__text__category__link--home"
    
+= render 'top/header'
 
 .mypage__body
   .mypage__body__main
@@ -19,7 +20,7 @@
             いいね一覧
             = icon('fas', 'angle-right')
           %li.mypage-list__ul__li
-            = link_to "出品する", new_product_path, class: "link_tag"
+            出品する
             = icon('fas', 'angle-right')
           %li.mypage-list__ul__li
             下書き
@@ -53,7 +54,7 @@
             お届け先住所
             = icon('fas', 'angle-right')
           %li.setting-list__ul__li
-            = link_to "支払い方法", creditcard_path(@card)
+            支払い方法
             = icon('fas', 'angle-right')
           %li.setting-list__ul__li
             メール/パスワード
@@ -64,40 +65,26 @@
           %li.setting-list__ul__li
             電話番号の確認
             = icon('fas', 'angle-right')
-          %li.setting-list__ul__li
-            = link_to "ログアウト", users_path, class: "link_tag"
-            = icon('fas', 'angle-right')
     .right
-      .right__content
-        .right__content__top
-          .right__content__top--a
-            .a__myphoto
-              = image_tag src="/assets/icon_bDa7GXd8WFkSXUMU.png", size: "60×60"
-            .a__name
-              = current_user.nickname
-            .a__rank
-              %h2.a__rank__level
-                評価 0
-              %h2.a__rank__item
-                出品数
-                = current_user.products.count
-        .right__content__tabs
-          %ul.tab__top
-            %li.tab__top__li.info
-              お知らせ
-            %li.tab__top__li.todo
-              やることリスト
-        .right__content__naiyou
-          .right__content__naiyou--a
-            現在、お知らせはありません
-      .right__bottom
-        .right__bottom__title
-          購入した商品
-        %ul.right__bottom__tab__buy
-          %li.right__bottom__tab__buy__li.now
-            取引中
-          %li.right__bottom__tab__buy__li.was
-            過去の取引
-        .bottom__syousai
-          .bottom__syousai--x
-            現在、取引はございません
+      .delete__box
+        .delete__box__header
+          お支払い方法
+        .delete__box__container
+          .delete__box__container__card-data
+            .delete__box__cotainer__card-date__text
+              クレジットカード
+            %ul.delete__box__container__card-data__area
+              %li.delete__box__container__card-data__area__list
+                .card-date
+                  .card-date__box
+                    .card-number
+                      = "**** **** **** " + @card_info.last4
+                    .card-data
+                      = "有効期限" + @card_info.exp_month.to_s + " / " + @card_info.exp_year.to_s.slice(2,3) 
+                    .card-logo
+                      = image_tag "#{@card_src}", alt: @card_info.brand, class:'li-box'
+                  .car-btn
+                    = button_to "削除する", {controller: 'creditcards', action: 'destroy'}, {method: :delete, class:'delete-btn'}
+          
+= render 'top/appBanner'
+= render 'top/footer'

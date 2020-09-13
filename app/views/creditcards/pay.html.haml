@@ -1,0 +1,9 @@
+= render 'products/header'
+.compContainer
+  .compContainer__panel
+    .compContainer__panel__image
+      = image_tag('material/pict/info.png')
+    .compContainer__panel__message
+      %p 商品の購入が完了しました。
+      = link_to "トップページへ戻る", root_path
+= render 'products/footer'

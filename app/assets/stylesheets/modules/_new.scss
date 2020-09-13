@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+header{
+  height: 100px;
+  width: 100vw;
+  display: block;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper{
+  background-color: #eeeeee;
+}
+
+// ヘッダー文字
+.credit-card__contaier{
+  background-color: #ffffff;
+  width: 600px;
+  margin: 0 auto;
+  .credit-card__container__images{
+    border-bottom: 1px solid #eeeeee;
+    padding: 30px 60px 30px 60px;
+    &__text{
+      font-size: 24px;
+      color: #333333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__box{
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: #333333;
+    }
+  }
+}
+
+// // カード番号
+.payment-text__contents{
+  display: flex;
+  font-weight: bold;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.card-number-form{
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  height: 45px;
+  width: 100%;
+  padding: 10px;
+  margin: 7px 0;
+  font-size: 15px;
+}
+
+// // 有効期限
+.expiration__payment__date{
+  display: flex;
+  font-weight: bold;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.expiration__payment__form{
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin-top: 16px;
+  margin-bottom: 20px;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+select{
+  flex: 1 1 0%;
+  width: 100%;
+  height: 45px;
+  border: 1px solid #d3d3d3;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.exp-text{
+  width: 46px;
+  text-align: center;
+}
+
+// // セキュリティーコード
+.payment-text-container{
+  align-items: center;
+  display: inline-flex;
+  width: 41%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 11px;
+  height: 48px;
+  margin: 7px 0 20px 0;
+  outline: none;
+  padding: 0 10px;
+}
+
+// submitボタン
+.card{
+  text-align: center;
+}
+.credit-card-submit-btn{
+  width: 50%;
+  height: 45px;
+  border-radius: 4px;
+  margin: 12px 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #00eeff;
+  border-style: none;
+  color: #ffffff;
+}
+
+ul.card{
+  display: flex;
+}
+
+.li-box{
+  max-height: 45px;
+  max-width: 45px;
+  margin: 5px;
+}
+
+label.credit{
+  color: #333333;
+}
+
+span.required{
+  margin-left: 7px;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 1px 3px;
+  border-radius: 2px;
+  background-color: #00eeff;
+}
+

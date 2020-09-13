@@ -13,9 +13,11 @@
 @import "font-awesome";
 @import "sessions/new";
 @import "modules/create_address";
+@import "modules/new";
+@import "modules/delete_show";
 @import "modules/edit";
 
 // 中北作マイページ&購入確認ページ実装
 @import "mypage";
-@import "lookbuy";
+@import "buy";
 @import "index";
