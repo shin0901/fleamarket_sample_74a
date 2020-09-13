@@ -55,7 +55,7 @@ class CreditcardsController < ApplicationController
   end
 
   def buy
-    card = Creditcard.where(user_id: current_user.id).first
+    card = Creditcard.find_by(user_id: current_user.id)
     @product = Product.find(params[:id])
     @address = Address.find(params[:id])
     if @card.blank?
