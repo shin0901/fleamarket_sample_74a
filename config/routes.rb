@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :users, only: [:index, :show]
-  resources :images, only: [:new, :create] 
+  resources :users, only: [:index, :show, :destroy]
+  resources :images, only: [:index, :new, :create] 
+
 end
