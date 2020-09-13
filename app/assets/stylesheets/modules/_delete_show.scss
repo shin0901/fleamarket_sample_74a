@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+header{
+  height: 100px;
+  width: 100vw;
+  display: block;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+.delete__box{
+  width: 700px;
+  height: 300px;
+  background-color: rgb(255, 255, 255);
+  &__header{
+    padding: 22px 16px;
+    border-bottom: 1px solid rgb(245, 245, 245);
+    text-align: center;
+    font-size: 24px;
+    height: 80px;
+  }
+  &__container{
+    max-width: 375px;
+    margin: 0 auto;
+    &__card-data{
+      padding: 32px 0px;
+      opacity: 1;
+      pointer-events: auto;
+      &__text{
+        font-size: 15px;
+        line-height: 21px;
+        font-weight: 600;
+      }
+      &__area{
+        margin-top: 22px;
+      }
+    }
+    &__btn{
+      color: #0095ee;
+      list-style: none;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  }
+}
+
+.card-date{
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  &__box{
+    flex: 1 1 0%;
+    margin: 0px 16px 0px 0px;
+  }
+}
+
+.delete-btn{
+  background-color: initial;
+  border: 1px solid rgb(234, 53, 45);
+  border-radius: 4px;
+  color: rgb(234, 53, 45);
+  cursor: pointer;
+  font-weight: bold;
+  padding: 6px 12px;
+}
+
+
+.delete__box__container__card-data__area ul{
+  list-style: none;
+}

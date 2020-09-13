@@ -42,7 +42,6 @@ $text-color: #222222;
 .container {
   background-color: $container-color;
   width: 700px;
-  height: 940px;
   margin: 0 auto;
   &__images {
     height: 98px;
@@ -75,20 +74,20 @@ $text-color: #222222;
       margin-left: 16px;
       width: 247px;
       &__name{
-        font-size: 13px;
+        font-size: 20px;
         line-height: 1.4em;
         margin-bottom: 8px;
         display: block;
       }
       &__money{
-        font-size: 14px;
+        font-size: 20px;
         text-align: right;
         display: block;
       }
     }
   }
   .money{
-    height: 133px;
+    height: 110px;
     width: 375px;
     padding: 32px 16px;
     margin: 0 auto;
@@ -134,7 +133,6 @@ $text-color: #222222;
   }
 
   .pay{
-    height: 111px;
     width: 375px;
     padding: 32px 16px;
     margin: 0 auto;
@@ -371,4 +369,17 @@ $text-color: #222222;
   font-size: 13px;
   font-weight: bold;
   color: #888888;
+}
+
+.pay-btn{
+  height: 60px;
+    width: 60%;
+    font-size: 23px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #02cece;
+    border-style: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
 }

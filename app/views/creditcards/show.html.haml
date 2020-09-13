@@ -1,1 +1,90 @@
-= link_to "トップページへ戻る", root_path
+.breadcrumb-list
+  .breadcrumb-list__text
+    .breadcrumb-list__text__home
+      = link_to "FURIMA", root_path, class: "breadcrumb-list__text__home__link"
+      %i.fas.fa-angle-right
+    .breadcrumb-list__text__category--main
+      = link_to "マイページ", "#", class: "breadcrumb-list__text__category__link--home"
+   
+= render 'top/header'
+
+.mypage__body
+  .mypage__body__main
+    .left
+      .mypage-list
+        %ul.mypage-list__ul
+          %li.mypage-list__ul__li
+            マイページ
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            いいね一覧
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            出品する
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            下書き
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            出品した商品 - 出品中
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            出品した商品 - 取引中
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            出品した商品 - 売却済み
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            購入した商品 - 取引中
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            購入した商品 - 売却済み
+            = icon('fas', 'angle-right')
+          %li.mypage-list__ul__li
+            お問い合わせ
+            = icon('fas', 'angle-right')
+      %h3.title
+        設定
+      .setting
+        %ul.setting-list__ul
+          %li.setting-list__ul__li
+            プロフィール
+            = icon('fas', 'angle-right')
+          %li.setting-list__ul__li
+            お届け先住所
+            = icon('fas', 'angle-right')
+          %li.setting-list__ul__li
+            支払い方法
+            = icon('fas', 'angle-right')
+          %li.setting-list__ul__li
+            メール/パスワード
+            = icon('fas', 'angle-right')
+          %li.setting-list__ul__li
+            本人情報
+            = icon('fas', 'angle-right')
+          %li.setting-list__ul__li
+            電話番号の確認
+            = icon('fas', 'angle-right')
+    .right
+      .delete__box
+        .delete__box__header
+          お支払い方法
+        .delete__box__container
+          .delete__box__container__card-data
+            .delete__box__cotainer__card-date__text
+              クレジットカード
+            %ul.delete__box__container__card-data__area
+              %li.delete__box__container__card-data__area__list
+                .card-date
+                  .card-date__box
+                    .card-number
+                      = "**** **** **** " + @card_info.last4
+                    .card-data
+                      = "有効期限" + @card_info.exp_month.to_s + " / " + @card_info.exp_year.to_s.slice(2,3) 
+                    .card-logo
+                      = image_tag "#{@card_src}", alt: @card_info.brand, class:'li-box'
+                  .car-btn
+                    = button_to "削除する", {controller: 'creditcards', action: 'destroy'}, {method: :delete, class:'delete-btn'}
+          
+= render 'top/appBanner'
+= render 'top/footer'

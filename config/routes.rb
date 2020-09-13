@@ -23,8 +23,8 @@ Rails.application.routes.draw do
 
   resources :creditcards, only: [:new, :create, :show, :destroy] do
     collection do
-      get 'regist_done'            #登録済
-      get 'delete_done'            #削除済
+      get 'regist_done'
+      get 'delete_done'
     end
     member do
       get 'buy'
