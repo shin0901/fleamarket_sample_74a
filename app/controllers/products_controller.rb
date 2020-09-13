@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
   before_action :set_category, only: [:show, :new, :create, :edit, :update, :destroy]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-   
+  before_action :user_confirm, only: :edit
 
   def get_category_children
     @category_children = Category.find("#{params[:parent_id]}").children
@@ -86,4 +86,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def user_confirm
+    unless current_user.id == @product.user_id?
+      redirect_to product_path, alert: "この商品を編集する権限がありません"
+    end
+  end
 end
