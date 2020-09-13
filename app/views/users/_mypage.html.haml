@@ -19,7 +19,7 @@
             いいね一覧
             = icon('fas', 'angle-right')
           %li.mypage-list__ul__li
-            出品する
+            = link_to "出品する", new_product_path, class: "link_tag"
             = icon('fas', 'angle-right')
           %li.mypage-list__ul__li
             下書き
@@ -65,20 +65,22 @@
             電話番号の確認
             = icon('fas', 'angle-right')
           %li.setting-list__ul__li
-            = link_to "ログアウト", users_path
+            = link_to "ログアウト", users_path, class: "link_tag"
             = icon('fas', 'angle-right')
     .right
       .right__content
         .right__content__top
           .right__content__top--a
             .a__myphoto
+              = image_tag src="/assets/icon_bDa7GXd8WFkSXUMU.png", size: "60×60"
             .a__name
-              User_name
+              = current_user.nickname
             .a__rank
               %h2.a__rank__level
                 評価 0
               %h2.a__rank__item
-                出品数 0
+                出品数
+                = current_user.products.count
         .right__content__tabs
           %ul.tab__top
             %li.tab__top__li.info

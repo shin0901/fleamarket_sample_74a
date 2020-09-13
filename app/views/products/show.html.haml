@@ -23,14 +23,14 @@
           %span.shipping_charge
             = @product.shipping_charge.name
       .show__container__item-info__btn
-        - if current_user.id != @product.user_id
-          = button_to '購入画面に進む', {controller: 'creditcards', action: 'buy'}, {method: :get, class:'buy-btn'}
-        - else
+        - if user_signed_in? && current_user.id == @product.user_id
           .sellerBtn
             .sellerBtn__edit
               = button_to '商品の編集', {controller: 'products', action: 'edit'}, {method: :get, class:'sellerBtn__edit__btn'}
             .sellerBtn__destroy
               = button_to 'この商品を削除する', {controller: 'products', action: 'destroy'}, {method: :delete, data: {confirm: "この商品を削除しますか？"}, class:'sellerBtn__destroy__btn'}
+        - else
+          = button_to '購入画面に進む', {controller: 'products', action: 'index'}, {method: :get, class:'buy-btn'}
           
       .show__container__item-info__description
         = simple_format @product.description
