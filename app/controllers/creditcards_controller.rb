@@ -15,7 +15,7 @@ class CreditcardsController < ApplicationController
   def create
     Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
     if params["payjp-token"].blank?
-      redirect_to action: :new, alert: "クレジットカードを登録できませんでした。"
+      redirect_to new_creditcard_path, alert: "クレジットカードを登録できませんでした。"
     else
       customer = Payjp::Customer.create(
         card: params["payjp-token"],
