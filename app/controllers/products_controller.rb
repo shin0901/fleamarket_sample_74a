@@ -41,7 +41,7 @@ class ProductsController < ApplicationController
 
   def destroy
     respond_to do |format|
-      if product.destroy
+      if @product.destroy
         format.html{redirect_to root_path, notice:'商品を削除しました'}
       else
         format.html{render action: 'edit', notice:'商品の削除に失敗しました'}
@@ -92,7 +92,7 @@ class ProductsController < ApplicationController
   end
 
   def user_confirm
-    unless current_user.id == @product.user_id?
+    unless current_user.id == @product.user_id
       redirect_to product_path, alert: "この商品を編集する権限がありません"
     end
   end
