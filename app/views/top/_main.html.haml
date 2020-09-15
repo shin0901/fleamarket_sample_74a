@@ -119,7 +119,7 @@
       ピックアップブランド
     .main__pickupContainer__productBox
       .main__pickupContainer__productBox__head
-        = link_to product_path(id:1) do
+        = link_to "#" do
           %h3.title
             アーカイバ
       .main__pickupContainer__productBox__lists
@@ -128,6 +128,10 @@
             = link_to product_path(product.id) do
               %figure.product__list--img
                 = image_tag product.images[0].image.url
+                -if product.buyer_id.present? 
+                  .product-box_photo__sold
+                    .product-box_photo__sold__inner
+                      SOLD
               .product__list--body
                 %h3.name
                   = product.name
