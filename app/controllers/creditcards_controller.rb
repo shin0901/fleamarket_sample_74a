@@ -78,18 +78,25 @@ class CreditcardsController < ApplicationController
   end
 
   def pay
-    Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
-    customer = Payjp::Customer.retrieve(@card.customer_id)
-    if Payjp::Charge.create(amount: @item.price, customer: customer, currency: 'jpy' )
-      @item.update!(status: 1, buyer_id: current_user.id)
+    if @item.buyer_id.present?
+      redirect_to product_path(@item.id), alert: "売り切れています。"
     else
-      render action: :buy
+      @item.with_lock do
+        if @card.present?
+          Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
+          customer = Payjp::Customer.retrieve(@card.customer_id)
+          Payjp::Charge.create(amount: @item.price, customer: customer, currency: 'jpy' )
+            @item.update!(status: 1, buyer_id: current_user.id)
+        else
+          render action: :buy
+        end
+      end
     end
   end
 
   def destroy
     if @card.blank?
-      redirect_to action: "new"
+      redirect_to action: new
     else
       Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
       customer = Payjp::Customer.retrieve(@card.customer_id)
