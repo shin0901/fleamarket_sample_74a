@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_09_17_120748) do
     t.string "buildingname"
     t.string "phone"
     t.bigint "user_id"
-    t.date "birthday_date", null: false
+    t.date "birthday_date"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
